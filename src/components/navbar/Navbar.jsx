@@ -3,21 +3,14 @@ import { VscThreeBars } from 'react-icons/vsc';
 import { IoHome } from 'react-icons/io5';
 import { IoSettings } from 'react-icons/io5';
 import { BsGraphUp } from 'react-icons/bs';
- import { CgBox } from 'react-icons/cg';  
+import { CgBox } from 'react-icons/cg';  
 import { BsCalendarDate } from 'react-icons/bs';   
 import { AiOutlineUser } from 'react-icons/ai';   
 import "./navbar.css"
 
+/* reference https://www.codinglabweb.com/2021/06/dropdown-sidebar-menu-html-css.html */
+
 export default function Navbar() {
-
-
-  let arrow = document.querySelectorAll(".arrow");
-  for (var i = 0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e) => {
-      let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
-      arrowParent.classList.toggle("showMenu");
-    });
-  }
   const sidebar = useRef();
 
   function sideBarClicked() {
@@ -105,8 +98,8 @@ export default function Navbar() {
                 <AiOutlineUser />
               </div>
               <div className="name-job">
-                <div className="profile_name">Prem Shahi</div>
-                <div className="job">Web Desginer</div>
+                <div className="profile_name">User</div>
+                <div className="nick">Nickname</div>
               </div>
               <i className='bx bx-log-out' ></i>
             </div>

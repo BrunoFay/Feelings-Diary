@@ -201,7 +201,7 @@ padding-left: 1.5rem;
   padding: 10px;
 }
 .sidebar .profile-details .profile_name,
-.sidebar .profile-details .job{
+.sidebar .profile-details .nick{
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -209,11 +209,12 @@ padding-left: 1.5rem;
 }
 .sidebar.close .profile-details i,
 .sidebar.close .profile-details .profile_name,
-.sidebar.close .profile-details .job{
+.sidebar.close .profile-details .nick{
   display: none;
 }
-.sidebar .profile-details .job{
+.sidebar .profile-details .nick{
   font-size: 12px;
+  font-style: italic;
 }
 
 @media (max-width: 420px) {
