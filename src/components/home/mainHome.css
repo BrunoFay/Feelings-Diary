@@ -1,0 +1,55 @@
+.home-container {
+  background-color: rgb(196, 60, 60);
+  height: 99vh;
+  width: 97%;
+  position: relative;
+  top: 45.4vh;
+  left: 0.1vw;
+  justify-content: center; 
+  align-items: center;
+  border-radius: 7px;
+}
+.home-container h1{
+  margin-left: 1rem;
+}
+.main-content{
+  justify-content: center;
+}
+.sidebar.close .home-container{
+  left: 78px;
+  width: 30%;
+}
+
+.home-container nav{
+display: flex;
+gap: 2rem;
+padding: 0.5rem;
+background-color: blueviolet;
+}
+.home-container nav span{
+  margin-left: 0.6rem;
+
+}
+
+.feelings-container,.notes-container{
+display: flex;
+gap: 2rem;
+padding: 1em;
+flex-wrap: wrap;
+justify-content: center;
+}
+.feelings-container div{
+background-color: aqua;
+width: 10rem;
+height: 10em;
+}
+.notes-container div{
+background-color: yellow;
+width: 15rem;
+height: 16rem;
+border-radius: 7px;
+transition: all ease-in 150ms;
+}
+.notes-container div:hover{
+  box-shadow: 0px 0px 1em rgb(77, 75, 75);
+}

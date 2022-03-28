@@ -1,15 +1,16 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar';
+import MainHome from '../components/home/MainHome';
+
 export default function Home() {
   return (
     <>
       <Navbar />
-      <section className="main-section">
-        <div className="main-content">
-          <i className='bx bx-menu' ></i>
-          <span className="text">home</span>
+      <main className="main-container">
+        <div className="main-content">        
+          <MainHome />
         </div>
-      </section>
+      </main>
     </>
   )
 }
