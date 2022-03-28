@@ -1,13 +1,17 @@
 .home-container {
   background-color: rgb(196, 60, 60);
   height: 99vh;
-  width: 97%;
+  width: 99%;
   position: relative;
   top: 45.4vh;
   left: 0.1vw;
   justify-content: center; 
   align-items: center;
   border-radius: 7px;
+}
+.DWM-Components{
+  color: rgb(207, 207, 194);
+  font-size: 1.3vw;
 }
 .home-container h1{
   margin-left: 1rem;
@@ -28,7 +32,6 @@ background-color: blueviolet;
 }
 .home-container nav span{
   margin-left: 0.6rem;
-
 }
 
 .feelings-container,.notes-container{
@@ -43,13 +46,59 @@ background-color: aqua;
 width: 10rem;
 height: 10em;
 }
-.notes-container div{
-background-color: yellow;
-width: 15rem;
-height: 16rem;
-border-radius: 7px;
-transition: all ease-in 150ms;
+.carousel-posts{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap :2.5rem;
+  transition: all ease-in 150ms;
+  border-radius: 7px;
 }
-.notes-container div:hover{
+.carousel-posts div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  background-color: yellow;
+  height: 16rem;
+}
+ .carousel-posts div:hover{
   box-shadow: 0px 0px 1em rgb(77, 75, 75);
+}
+.new-post{
+  display: flex;
+  background-color: rgba(198, 221, 202, 0.342);
+  width: 7vw;
+  height: 12vh;
+  border-radius: 7px;
+  transition: all ease-in 150ms;
+  border: dashed thin;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+ position: relative;
+ left: 3vw;
+} 
+
+.formNote-container{
+  position: absolute;
+  width: 50vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+  justify-content: center;
+  align-items: center;
+  top: 20vh;
+   box-shadow: 0px 1px 8px 5px rgb(77, 75, 75);
+   border-radius: 7px;
+ 
+}
+.formNote-container form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
