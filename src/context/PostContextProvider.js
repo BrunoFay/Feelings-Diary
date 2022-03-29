@@ -1,7 +1,7 @@
 import postContext from "./postsContext";
 import React, { useState } from 'react'
 
-export default function postContextProvider({ children }) {
+export default function PostContextProvider({ children }) {
   const [notes, setNotes] = useState([])
   
   const contextValue = {

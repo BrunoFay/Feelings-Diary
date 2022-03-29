@@ -1,11 +1,11 @@
 .home-container {
   background-color: rgba(196, 60, 60, 0.445);
-  height: 99vh;
+  height: 99%;
   width: 99%;
   flex-wrap: wrap;
   position: relative;
   top: 0.2rem;
-  left: 0.1vw;
+  left: 0.5vw;
   justify-content: center;
   align-items: center;
   border-radius: 7px;
@@ -52,27 +52,33 @@
   border-radius: 50%;
 }
 
-.carousel-posts {
+.carousel {
+  cursor: grab;
+  min-width: 55vw;
+  max-width: 63vw;
+  height: 39.6vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 2.5rem;
-  transition: all ease-in 150ms;
-  border-radius: 7px;
+  gap: 1em;
+  overflow: hidden;
+  white-space: wrap;
+  background-color: rgba(243, 85, 46, 0.911);
 }
 
-.carousel-posts div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15rem;
-  background-color: yellow;
-  height: 16rem;
+.carousel-item:nth-child(1) {
+  margin-left: 1em;
 }
-
-.carousel-posts div:hover {
-  box-shadow: 0px 0px 1em rgb(77, 75, 75);
+.carousel-item:nth-last-child(1) {
+  margin-right: 1em;
+}
+.carousel-item {
+  min-width: 13em;
+  max-width: 15em;
+  overflow: hidden;
+  height: 15em;
+  background-color: coral;
+  word-wrap: break-word;
+  text-overflow: clip;
 }
 
 .new-post {
@@ -139,4 +145,10 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+.carousel-item p{
+  font-size: 1.5vw;
+  color: rgb(207, 207, 194);
+
 }

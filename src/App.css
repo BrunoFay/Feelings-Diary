@@ -5,7 +5,9 @@
   --bgcolorAng:#da0404;
   --bgcolorFer :#003e57;
 }
-
+textarea {
+  resize: none;
+}
 .main-container{
   position: relative;
   background: #bbcc5d;
