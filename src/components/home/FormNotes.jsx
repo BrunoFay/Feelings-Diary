@@ -7,11 +7,11 @@ const INITIAL_STATE = {
   feeling: 'Happiness',
 }
 export default function FormNotes() {
-  const [notes, setNotes] = useState(INITIAL_STATE)
-  const handleChange = ({ target: { name, value } }) => { setNotes({ ...notes, [name]: value }) }
+  const [note, setNote] = useState(INITIAL_STATE)
+  const handleChange = ({ target: { name, value } }) => { setNote({ ...note, [name]: value }) }
   const handleClick = (e) => { 
     e.preventDefault()
-    setNotes({ ...notes, date: new Date() }) 
+    setNote({ ...note, date: new Date() }) 
   }
   return (
     <div className="formNote-container">
@@ -23,11 +23,11 @@ export default function FormNotes() {
           <option name="feeling" value='Fear'>Fear</option>
           <option name="feeling" value='Neutral'>Neutral</option>
         </select>
-        <input onChange={handleChange} value={notes.title} type="text" name='title' />
+        <input onChange={handleChange} value={note.title} type="text" name='title' />
         <textarea
           onChange={handleChange}
           name="description"
-          value={notes.description}
+          value={note.description}
           cols="30"
           rows="10" />
         <button  onClick={handleClick}>enviar</button>
