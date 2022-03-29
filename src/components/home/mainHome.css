@@ -1,61 +1,68 @@
 .home-container {
-  background-color: rgb(196, 60, 60);
+  background-color: rgba(196, 60, 60, 0.445);
   height: 99vh;
   width: 99%;
+  flex-wrap: wrap;
   position: relative;
-  top: 45.4vh;
+  top: 0.2rem;
   left: 0.1vw;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   border-radius: 7px;
 }
-.DWM-Components{
+
+.DWM-Components {
   color: rgb(207, 207, 194);
   font-size: 1.3vw;
 }
-.home-container h1{
+
+.home-container h1 {
   margin-left: 1rem;
 }
-.main-content{
-  justify-content: center;
-}
-.sidebar.close .home-container{
+
+.sidebar.close .home-container {
   left: 78px;
   width: 30%;
 }
 
-.home-container nav{
-display: flex;
-gap: 2rem;
-padding: 0.5rem;
-background-color: blueviolet;
+.home-container nav {
+  display: flex;
+  gap: 2rem;
+  padding: 0.5rem;
+  background-color: blueviolet;
 }
-.home-container nav span{
+
+.home-container nav span {
   margin-left: 0.6rem;
 }
 
-.feelings-container,.notes-container{
-display: flex;
-gap: 2rem;
-padding: 1em;
-flex-wrap: wrap;
-justify-content: center;
+.feelings-container, .notes-container {
+  display: flex;
+  gap: 2rem;
+  padding: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.feelings-container div{
-background-color: aqua;
-width: 10rem;
-height: 10em;
+
+.feelings-container div {
+  width: 10vw;
+  height: 23vh;
+  align-self: center;
+  justify-content: center;
+  border-radius: 50%;
 }
-.carousel-posts{
+
+.carousel-posts {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap :2.5rem;
+  gap: 2.5rem;
   transition: all ease-in 150ms;
   border-radius: 7px;
 }
-.carousel-posts div{
+
+.carousel-posts div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,10 +70,12 @@ height: 10em;
   background-color: yellow;
   height: 16rem;
 }
- .carousel-posts div:hover{
+
+.carousel-posts div:hover {
   box-shadow: 0px 0px 1em rgb(77, 75, 75);
 }
-.new-post{
+
+.new-post {
   display: flex;
   background-color: rgba(198, 221, 202, 0.342);
   width: 7vw;
@@ -77,11 +86,11 @@ height: 10em;
   align-self: center;
   align-items: center;
   justify-content: center;
- position: relative;
- left: 3vw;
-} 
+  position: relative;
+  left: 3vw;
+}
 
-.formNote-container{
+.formNote-container {
   position: absolute;
   width: 50vw;
   height: 60vh;
@@ -91,14 +100,43 @@ height: 10em;
   justify-content: center;
   align-items: center;
   top: 20vh;
-   box-shadow: 0px 1px 8px 5px rgb(77, 75, 75);
-   border-radius: 7px;
- 
+  box-shadow: 0px 1px 8px 5px rgb(77, 75, 75);
+  border-radius: 7px;
+
 }
-.formNote-container form{
+
+.formNote-container form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.Happiness-container {
+  background-color: var(--bgcolorHap);
+}
+
+.Sadness-container {
+  background-color: var(--bgcolorSad);
+}
+
+.Anger-container {
+  background-color: var(--bgcolorAng);
+}
+
+.Fear-container {
+  background-color: var(--bgcolorFer);
+}
+
+.Neutral-container {
+  background-color: var(--bgcolorNeu);
+}
+
+.div-feeling {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }

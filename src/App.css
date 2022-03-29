@@ -1,3 +1,10 @@
+:root {
+  --bgcolorHap: #f89b21;
+  --bgcolorSad: #161514;
+  --bgcolorNeu: #807e7e;
+  --bgcolorAng:#da0404;
+  --bgcolorFer :#003e57;
+}
 
 .main-container{
   position: relative;
@@ -13,20 +20,20 @@
 }
 
 .main-container .main-content{
-  height: 60px;
+  height: 60000px;
   display: flex;
   align-items: center;
 }
-.main-container .main-content .bx-menu,
-.main-container .main-content .text{
+.main-container.bx-menu,
+.main-container.text{
   color: #09016b;
   font-size: 35px;
 }
-.main-container .main-content .bx-menu{
+.main-container.bx-menu{
   /* margin: 0 15px; */
   cursor: pointer;
 }
-.main-container .main-content .text{
+.main-container.text{
   font-size: 26px;
   font-weight: 600;
 }

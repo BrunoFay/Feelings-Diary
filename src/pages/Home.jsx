@@ -6,10 +6,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="main-container">
-        <div className="main-content">        
+      <main className="main-container">          
           <MainHome />
-        </div>
       </main>
     </>
   )
