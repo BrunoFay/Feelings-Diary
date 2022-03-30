@@ -4,13 +4,13 @@ export default function CardNoteWindow() {
   /* ${note.feeling} */
   return (
     <div className={`CardNoteWindow -container`}>
-      <div className='cnw-infos-btn '>
         <h1>My Notes</h1>
+      <div className='cnw-infos-btn '>
         <span>felling</span>
         <span>data</span>
         <div>
-          <span></span>
-          <span></span>
+          <span>remove</span>
+          <span>edit</span>
         </div>
       </div>
       <div className='cnw-describe'>

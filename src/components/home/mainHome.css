@@ -279,15 +279,19 @@
 
 .cnw-describe {
   grid-area: 2 / 3 / 5 / 6;
-  background-color: aqua;
+  background-color: rgb(116, 206, 56);
 }
 
 .cnw-close-btn {
   grid-area: 1 / 7 / 2 / 8;
-  background-color: aqua;
+  background-color: rgb(31, 29, 129);
 }
 
 .cnw-infos-btn {
-  grid-area: 1 / 1 / 6 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  grid-area: 2 / 1 / 6 / 2;
   background-color: aqua;
 }
