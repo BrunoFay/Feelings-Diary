@@ -146,35 +146,46 @@
   left: 3vw;
   transform: scale(0.9)
 }
- #fellings{
-   margin-top: 1rem;
-  width:10em;
-  text-align:center;
+
+#fellings {
+  margin-top: 1rem;
+  width: 10em;
+  text-align: center;
 }
+
 .new-post:hover {
   transform: scale(1);
   font-size: x-large;
 }
 
+.editFormNote-container {
+  background-color: rgba(65, 241, 109, 0.452);
+}
+
 .formNote-container {
+  background-color: rgba(94, 8, 105, 0.555);
+}
+
+.formNote-container, .editFormNote-container {
   position: absolute;
   width: 50vw;
   height: 64vh;
+  top: 20vh;
   display: flex;
   flex-direction: column;
-  background-color: rgba(94, 8, 105, 0.555);
   justify-content: space-evenly;
   align-items: center;
-  top: 20vh;
   box-shadow: 0px 1px 8px 5px rgb(77, 75, 75);
   border-radius: 7px;
 }
-.formNote-container span{
+
+.formNote-container span {
   color: var(--colorTitleAndPorcentage);
   font-size: 1.5vw;
   font-weight: bolder;
   text-shadow: 1px 0px 1px black;
 }
+
 .formNote-container button {
   background-color: #11101d;
   color: rgb(192, 183, 183);
@@ -187,7 +198,8 @@
   position: relative;
   bottom: 0.5rem;
 }
-.formNote-container button:disabled{
+
+.formNote-container button:disabled {
   background-color: #11101d36;
 
 }
@@ -199,7 +211,8 @@
   align-items: center;
   gap: 1rem;
 }
-.closeForm-btn{
+
+.closeForm-btn {
   position: absolute;
   top: 0;
   right: 0;
@@ -210,6 +223,7 @@
   color: rgb(192, 183, 183);
   transition: all ease-in 150ms;
 }
+
 .Happiness-container {
   background-color: var(--bgcolorHap);
 }
@@ -247,4 +261,33 @@
   align-self: center;
   color: var(--colorTitleAndPorcentage);
   font-size: 1.5vw;
+}
+
+.CardNoteWindow {
+  position: absolute;
+  width: 50vw;
+  height: 64vh;
+  top: 20vh;
+  background-color: rgba(255, 242, 242, 0.918);
+  display: grid;
+  display: grid;
+  grid-template-columns: 1fr 0.1fr repeat(3, 1fr) 0.1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.cnw-describe {
+  grid-area: 2 / 3 / 5 / 6;
+  background-color: aqua;
+}
+
+.cnw-close-btn {
+  grid-area: 1 / 7 / 2 / 8;
+  background-color: aqua;
+}
+
+.cnw-infos-btn {
+  grid-area: 1 / 1 / 6 / 2;
+  background-color: aqua;
 }

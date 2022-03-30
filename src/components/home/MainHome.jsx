@@ -5,20 +5,24 @@ import FormNotes from './FormNotes'
 import { AiOutlinePlus } from 'react-icons/ai';
 import FeelingContainer from './FeelingContainer';
 import Carousel from './Carousel';
-
+import CardNoteWindow from './CardNoteWindow';
+import postContext from '../../context/postsContext';
 
 const ARRAY_FEELINGS = [{ title: 'Happiness' }, { title: 'Sadness' },
 { title: 'Anger' }, { title: 'Fear' }, { title: 'Neutral' }]
 
+const INITIAL_STATE_EDITEDNOTE = {
+  status: false,
+  note: [],
+}
 
 export default function MainHome() {
-  const [visibleForm, setVisibleForm] = useState(false)
-  const [editedNote, setEditedNote] = useState(false)
-  const handleClick = () => {
-    setVisibleForm(!visibleForm)
+  const { visible, setVisible } = useContext(postContext)
+  const [editedNote, setEditedNote] = useState(INITIAL_STATE_EDITEDNOTE)
+
+  const handleClick = (name) => {
+    setVisible(!visible[name])
   };
-
-
   return (
     <div className='home-container'>
       <h1>Feelings</h1>
@@ -32,10 +36,15 @@ export default function MainHome() {
       <h1>My Notes</h1>
       <DaysWeekMonthComponent />
       <section className='notes-container'>
-        {visibleForm ? (
-          <FormNotes feelings={ARRAY_FEELINGS} closeFormFunc={handleClick} />
+        {visible.visibleForm ? (
+          <FormNotes
+            feelings={ARRAY_FEELINGS}
+            closeFormFunc={handleClick}
+            editedNote={[editedNote, setEditedNote]}
+          />
         ) : null}
         <Carousel />
+        {visible.visibleCard ? (<CardNoteWindow />) : null}
         <div className='new-post' onClick={handleClick}>
           <AiOutlinePlus />
         </div>

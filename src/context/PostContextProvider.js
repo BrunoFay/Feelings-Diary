@@ -3,8 +3,14 @@ import React, { useState } from 'react'
 
 const MAX_PORCENTAGE = 100;
 const MIN_PORCENTAGE = 0;
+const INITIAL_STATE_VISIBLE = {
+  visibleForm: false,
+  visibleCard: true,
+}
 export default function PostContextProvider({ children }) {
+
   const [notes, setNotes] = useState([])
+  const [visible, setVisible] = useState(INITIAL_STATE_VISIBLE)
 
   const percentageArray = notes.map(({ feeling }) => feeling)
   const calculatePercentage = (array, item) => {
@@ -17,7 +23,9 @@ export default function PostContextProvider({ children }) {
     notes,
     setNotes,
     percentageArray,
-    calculatePercentage
+    calculatePercentage,
+    visible,
+    setVisible
   }
   return (
     <postContext.Provider value={contextValue}>
