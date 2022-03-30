@@ -52,6 +52,20 @@
   border-radius: 50%;
 }
 
+.progressbar-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.progressbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #1f5f22;
+  z-index: -1;
+}
+
 .carousel {
   cursor: grab;
   min-width: 55vw;
@@ -61,24 +75,60 @@
   align-items: center;
   gap: 1em;
   overflow: hidden;
+  border-radius: 7px;
   white-space: wrap;
-  background-color: rgba(243, 85, 46, 0.911);
+  background-color: rgba(109, 52, 14, 0.253);
+
 }
 
 .carousel-item:nth-child(1) {
   margin-left: 1em;
 }
+
 .carousel-item:nth-last-child(1) {
   margin-right: 1em;
 }
+
 .carousel-item {
+  display: flex;
+  flex-direction: column;
   min-width: 13em;
   max-width: 15em;
-  overflow: hidden;
-  height: 15em;
-  background-color: coral;
+  height: 16em;
   word-wrap: break-word;
-  text-overflow: clip;
+  border-radius: 7px;
+  justify-content: space-between;
+}
+
+.carousel-item h3 {
+  padding: 0 0.5rem;
+  color: var(--colorTitleAndPorcentage);
+}
+
+.carousel-item p {
+  height: 22vh;
+  background-color: rgba(241, 239, 231, 0.39);
+  font-size: 1.5vw;
+  color: rgba(19, 19, 17, 0.986);
+  overflow: hidden;
+  font-size: smaller;
+  padding: 0 1em;
+}
+
+.carousel-item span:nth-child(1) {
+  font-style: italic;
+  color: rgb(179, 176, 164);
+  text-shadow: 1px 0px 1px black;
+  font-weight: bolder;
+}
+
+.carousel-item span:nth-last-child(1) {
+  text-align: right;
+  font-size: smaller;
+  padding-right: 1rem;
+  color: var(--colorTitleAndPorcentage);
+  text-shadow: 1px 0px 1px black;
+
 }
 
 .new-post {
@@ -94,20 +144,51 @@
   justify-content: center;
   position: relative;
   left: 3vw;
+  transform: scale(0.9)
+}
+ #fellings{
+   margin-top: 1rem;
+  width:10em;
+  text-align:center;
+}
+.new-post:hover {
+  transform: scale(1);
+  font-size: x-large;
 }
 
 .formNote-container {
   position: absolute;
   width: 50vw;
-  height: 60vh;
+  height: 64vh;
   display: flex;
   flex-direction: column;
-  background-color: blueviolet;
-  justify-content: center;
+  background-color: rgba(94, 8, 105, 0.555);
+  justify-content: space-evenly;
   align-items: center;
   top: 20vh;
   box-shadow: 0px 1px 8px 5px rgb(77, 75, 75);
   border-radius: 7px;
+}
+.formNote-container span{
+  color: var(--colorTitleAndPorcentage);
+  font-size: 1.5vw;
+  font-weight: bolder;
+  text-shadow: 1px 0px 1px black;
+}
+.formNote-container button {
+  background-color: #11101d;
+  color: rgb(192, 183, 183);
+  border: none;
+  border-radius: 7px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all ease-in 150ms;
+  position: relative;
+  bottom: 0.5rem;
+}
+.formNote-container button:disabled{
+  background-color: #11101d36;
 
 }
 
@@ -118,7 +199,17 @@
   align-items: center;
   gap: 1rem;
 }
-
+.closeForm-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgb(192, 183, 183);
+  transition: all ease-in 150ms;
+}
 .Happiness-container {
   background-color: var(--bgcolorHap);
 }
@@ -147,8 +238,13 @@
   text-align: center;
 }
 
-.carousel-item p{
-  font-size: 1.5vw;
-  color: rgb(207, 207, 194);
+.div-feeling div {
+  display: flex;
+  justify-content: center;
+}
 
+.div-feeling div>span {
+  align-self: center;
+  color: var(--colorTitleAndPorcentage);
+  font-size: 1.5vw;
 }
