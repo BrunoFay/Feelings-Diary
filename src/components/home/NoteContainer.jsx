@@ -1,18 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import postContext from '../../context/postsContext'
 
 export default function NoteContainer({ note }) {
-
-  const day = new Date(note.date).getDate()
-  const month = new Date(note.date).toLocaleString('default', { month: 'long' })
+  const { title, description, feeling, date } = note
+  const {
+    handleClickVisibility,
+    handleKeyPressVisibiliity,
+    VISIBLECARD,
+    setNoteCNW,
+    dateFormated } = useContext(postContext)
+ 
+  const handleClick = () => {
+    setNoteCNW(note)
+    handleClickVisibility(VISIBLECARD)
+  }
+  const handleKeyPress = (e) => {
+    setNoteCNW(note)
+    handleKeyPressVisibiliity(e,VISIBLECARD)
+  }
   return (
-    <div className={`carousel-item ${note.feeling}-container `}>
-      <h3>{note.title}</h3>
+    <article
+      className={`carousel-item ${feeling}-container`}
+      onClick={handleClick}
+      onKeyDown={handleKeyPress}
+      tabIndex='0'
+    >
+      <h3>{title}</h3>
       <div>
-        <span>{note.feeling}</span>
+        <span>{feeling}</span>
         <hr />
       </div>
-      <p>{note.description}</p>
-      <span>{month} {day}</span>
-    </div>
+      <p>{description}</p>
+      <span>{dateFormated(date)}</span>
+    </article>
   )
 }

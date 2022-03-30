@@ -10,12 +10,19 @@ const INITIAL_STATE_NOTE = {
   date: new Date(),
   feeling: 'Happiness',
 }
-export default function FormNotes({ feelings, closeFormFunc, editedNote }) {
-  const { notes, setNotes } = useContext(postContext)
+export default function FormNotes({ feelings }) {
+  const {
+    notes,
+    setNotes,
+    VISIBLEFORM,
+    editedNote,
+    setEditedNote,
+    handleKeyPressVisibiliity,
+    handleClickVisibility
+  } = useContext(postContext)
   const [note, setNote] = useState(INITIAL_STATE_NOTE)
   const [disableBtn, setdisableBtn] = useState(true)
-  const [editNote, setEditNote] = editedNote
-  const noteToEdit = notes.find(note => note.id === editNote.note.id)
+  const noteToEdit = notes.find(note => note.id === editedNote.note.id)
 
   useEffect(() => {
     if (note.title !== '' || note.description !== '') {
@@ -26,10 +33,10 @@ export default function FormNotes({ feelings, closeFormFunc, editedNote }) {
   }, [note.title, note.description])
 
   useEffect(() => {
-    if (editNote.status) {
+    if (editedNote.status) {
       setNote(noteToEdit)
     }
-  }, [editNote])
+  }, [editedNote])
 
   const handleChange = ({ target: { name, value } }) => {
     setNote({ ...note, date: new Date(), [name]: value })
@@ -39,12 +46,16 @@ export default function FormNotes({ feelings, closeFormFunc, editedNote }) {
     e.preventDefault()
     setNotes([...notes, note])
     setNote({ ...INITIAL_STATE_NOTE, id: uuidv4() })
-    setEditNote({ note: [], status: false })
+    setEditedNote({ note: [], status: false })
   }
   return (
-    <div className={editNote.status ? 'editFormNote-container' : 'formNote-container'}>
+    <main className={editedNote.status ? 'editFormNote-container' : 'formNote-container'}>
       <form>
-        <div className='closeForm-btn' onClick={() => closeFormFunc('visibleForm')}>
+        <div
+          className='closeForm-btn'
+          onClick={() => handleClickVisibility(VISIBLEFORM)}
+          onKeyDown={(e) => handleKeyPressVisibiliity(e,VISIBLEFORM)}
+        >
           <IoClose />
         </div>
         <select onChange={handleChange} name='feeling' id='fellings'>
@@ -68,8 +79,8 @@ export default function FormNotes({ feelings, closeFormFunc, editedNote }) {
         <button
           onClick={handleClick}
           disabled={disableBtn}>
-          {editNote.status ? 'Edit' : 'Send'}</button>
+          {editedNote.status ? 'Edit' : 'Send'}</button>
       </form>
-    </div>
+    </main>
   )
 }

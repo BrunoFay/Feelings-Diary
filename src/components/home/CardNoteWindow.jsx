@@ -1,24 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import postContext from '../../context/postsContext'
 
 export default function CardNoteWindow() {
-  /* ${note.feeling} */
+  const { noteCNW, dateFormated } = useContext(postContext)
+  const { title, description, feeling, date } = noteCNW
+  console.log(noteCNW);
   return (
-    <div className={`CardNoteWindow -container`}>
-        <h1>My Notes</h1>
-      <div className='cnw-infos-btn '>
-        <span>felling</span>
-        <span>data</span>
-        <div>
-          <span>remove</span>
-          <span>edit</span>
+    <main className={`CardNoteWindow ${feeling}-container`}>
+      <section className='cnw-header'>
+        <h1>{title}</h1>
+        <span>X</span>
+      </section>
+      <hr />
+      <section className='cnw-body'>
+        <div className='left-cnw-body'>
+          <span>{feeling}</span>
+          <span>{dateFormated(date)}</span>
+          <div className='cnw-settings'>
+            <span>remove</span>
+            <span>edit</span>
+          </div>
         </div>
-      </div>
-      <div className='cnw-describe'>
-        <p>dasdaskdoasokdaoskdoaksdokaoskd</p>
-      </div>
-      <div className='cnw-close-btn'>
+        <hr />
 
-      </div>
-    </div>
+        <div className='right-cnw-body'>
+          <p>{description}</p>
+        </div>
+      </section>
+    </main>
   )
 }

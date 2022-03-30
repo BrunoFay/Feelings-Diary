@@ -33,7 +33,7 @@ export default function useDragScroll(ref, options) {
       };
 
       // Show a cursor: grabbing style and set user-select: none to avoid highlighting text while dragging
-      ref.current.style.cursor = 'move';
+      ref.current.style.cursor = 'normal';
       ref.current.style.userSelect = 'none';
 
       // Add the event listeners that will track the mouse position for the rest of the interaction

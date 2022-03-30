@@ -13,6 +13,8 @@ export default function Carousel() {
       ref={carouselRef}
       className='carousel'
       onMouseDown={onMouseDown}
+      onKeyDown={onMouseDown}
+      tabIndex='0'
     >
       {notes.map((note) => (<NoteContainer key={note.id} note={note} />))}
     </div>

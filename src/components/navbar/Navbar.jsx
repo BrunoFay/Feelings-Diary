@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="sidebar close" ref={sidebar} >
+      <aside className="sidebar close" ref={sidebar} >
         <div className="logo-details" onClick={sideBarClicked}>
           <i className='bx bxl-c-plus-plus'>
             <VscThreeBars />
@@ -104,7 +104,7 @@ export default function Navbar() {
             </div>
           </li>
         </ul>
-      </div>
+      </aside>
     </>
   )
 }

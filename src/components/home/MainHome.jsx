@@ -11,20 +11,11 @@ import postContext from '../../context/postsContext';
 const ARRAY_FEELINGS = [{ title: 'Happiness' }, { title: 'Sadness' },
 { title: 'Anger' }, { title: 'Fear' }, { title: 'Neutral' }]
 
-const INITIAL_STATE_EDITEDNOTE = {
-  status: false,
-  note: [],
-}
 
 export default function MainHome() {
-  const { visible, setVisible } = useContext(postContext)
-  const [editedNote, setEditedNote] = useState(INITIAL_STATE_EDITEDNOTE)
-
-  const handleClick = (name) => {
-    setVisible(!visible[name])
-  };
+  const { isVisible, handleClickVisibility, VISIBLEFORM } = useContext(postContext)
   return (
-    <div className='home-container'>
+    <main className='home-container'>
       <h1>Feelings</h1>
       <DaysWeekMonthComponent />
       <section className='feelings-container'>
@@ -36,19 +27,15 @@ export default function MainHome() {
       <h1>My Notes</h1>
       <DaysWeekMonthComponent />
       <section className='notes-container'>
-        {visible.visibleForm ? (
-          <FormNotes
-            feelings={ARRAY_FEELINGS}
-            closeFormFunc={handleClick}
-            editedNote={[editedNote, setEditedNote]}
-          />
+        {isVisible.visibleForm ? (
+          <FormNotes feelings={ARRAY_FEELINGS} />
         ) : null}
         <Carousel />
-        {visible.visibleCard ? (<CardNoteWindow />) : null}
-        <div className='new-post' onClick={handleClick}>
+        {isVisible.visibleCard ? (<CardNoteWindow />) : null}
+        <button className='new-post' onClick={() => handleClickVisibility(VISIBLEFORM)}>
           <AiOutlinePlus />
-        </div>
+        </button>
       </section>
-    </div>
+    </main>
   )
 }

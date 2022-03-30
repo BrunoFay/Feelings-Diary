@@ -268,30 +268,36 @@
   width: 50vw;
   height: 64vh;
   top: 20vh;
-  background-color: rgba(255, 242, 242, 0.918);
-  display: grid;
-  display: grid;
-  grid-template-columns: 1fr 0.1fr repeat(3, 1fr) 0.1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
+  flex-direction: column;
 }
 
-.cnw-describe {
-  grid-area: 2 / 3 / 5 / 6;
-  background-color: rgb(116, 206, 56);
+.cnw-header {
+  display: flex; 
+  justify-content: space-between; 
+  height: 7vh;
+}
+.cnw-header span{
+  position: relative;
+  top: 0;
+  right: 0.6rem;
 }
 
-.cnw-close-btn {
-  grid-area: 1 / 7 / 2 / 8;
-  background-color: rgb(31, 29, 129);
+.cnw-body {
+  display: flex;
+  height: 100%;
 }
 
-.cnw-infos-btn {
+.left-cnw-body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  grid-area: 2 / 1 / 6 / 2;
-  background-color: aqua;
+  width: 10vw;
+}
+.cnw-settings{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 10vw;
 }
