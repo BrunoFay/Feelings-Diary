@@ -92,8 +92,7 @@
 .carousel-item {
   display: flex;
   flex-direction: column;
-  min-width: 13em;
-  max-width: 15em;
+  width: 13em;
   height: 16em;
   word-wrap: break-word;
   border-radius: 7px;
@@ -268,19 +267,37 @@
   width: 50vw;
   height: 64vh;
   top: 20vh;
+  border-radius: 7px;
   display: flex;
+  background-color: #1f5f22;
   flex-direction: column;
 }
 
-.cnw-header {
-  display: flex; 
-  justify-content: space-between; 
-  height: 7vh;
+.CardNoteWindow .cnw-settings button {
+  background-color: #11101d;
+  color: rgb(192, 183, 183);
+  border: none;
+  border-radius: 7px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all ease-in 150ms;
 }
-.cnw-header span{
+
+.cnw-header {
+  display: flex;
+  justify-content: space-between;
+  height: 7vh;
+  align-items: center;
+}
+
+.cnw-header  {
   position: relative;
   top: 0;
-  right: 0.6rem;
+  right: 0.2rem;
+  font-size: x-large;
+  background-color: transparent;
+  border: none;
 }
 
 .cnw-body {
@@ -294,10 +311,27 @@
   justify-content: space-around;
   align-items: center;
   width: 10vw;
+
 }
-.cnw-settings{
+.left-cnw-body span{
+  font-style: italic;
+  color: rgb(192, 183, 183);
+}
+
+.cnw-settings {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 10vw;
+}
+
+.right-cnw-body section {
+  color: var(--colorTitleAndPorcentage);
+  padding: 0.5rem;
+  height: 100%;
+  max-width: 34rem;
+}
+
+.right-cnw-body {
+  width: auto;
 }

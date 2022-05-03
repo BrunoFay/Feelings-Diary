@@ -11,7 +11,11 @@ const INITIAL_STATE_EDITEDNOTE = {
 export default function PostContextProvider({ children }) {
   const VISIBLECARD = 'visibleCard';
   const VISIBLEFORM = 'visibleForm';
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState([{  id: '11',
+    title: 'dd',
+    description: 'ddasdddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddddddddd dddddddddddddddddddd',
+    date: new Date(),
+    feeling: 'Happiness',}])
   const [noteCNW, setNoteCNW] = useState({})
   const [isVisible, setIsVisible] = useState(INITIAL_STATE_VISIBLE)
   const [editedNote, setEditedNote] = useState(INITIAL_STATE_EDITEDNOTE)

@@ -27,11 +27,9 @@ export default function MainHome() {
       <h1>My Notes</h1>
       <DaysWeekMonthComponent />
       <section className='notes-container'>
-        {isVisible.visibleForm ? (
-          <FormNotes feelings={ARRAY_FEELINGS} />
-        ) : null}
+        {isVisible.visibleForm && (<FormNotes feelings={ARRAY_FEELINGS} />)}
         <Carousel />
-        {isVisible.visibleCard ? (<CardNoteWindow />) : null}
+        {isVisible.visibleCard && (<CardNoteWindow />) }
         <button className='new-post' onClick={() => handleClickVisibility(VISIBLEFORM)}>
           <AiOutlinePlus />
         </button>

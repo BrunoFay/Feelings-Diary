@@ -79,7 +79,7 @@ export default function FormNotes({ feelings }) {
         <button
           onClick={handleClick}
           disabled={disableBtn}>
-          {editedNote.status ? 'Edit' : 'Send'}</button>
+          Send</button>
       </form>
     </main>
   )

@@ -4,8 +4,9 @@
   --bgcolorNeu: #807e7e;
   --bgcolorAng:#da0404;
   --bgcolorFer :#003e57;
-  --colorTitleAndPorcentage:#f7fff7
+  --colorTitleAndPorcentage:#f7fff7;
 }
+
 textarea {
   resize: none;
 }
