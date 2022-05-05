@@ -5,8 +5,9 @@ import { BsTrash } from 'react-icons/bs'
 import { IoClose } from 'react-icons/io5'
 
 export default function CardNoteWindow() {
-
   const {
+    notes,
+    setNotes,
     noteCNW,
     dateFormated,
     VISIBLECARD,
@@ -25,7 +26,11 @@ export default function CardNoteWindow() {
     handleClickVisibility(VISIBLEFORM)
     setEditedNote({ status: true, note: noteCNW })
   }
-
+  const handleClickRemovebtn = () => {
+    const notesFiltred = notes.filter(note => note.id !== noteCNW.id)
+    setNotes(notesFiltred)
+    handleClickVisibility()
+  }
   return (
     <main className={`CardNoteWindow ${feeling}-container`}>
       <section className='cnw-header'>
@@ -44,12 +49,18 @@ export default function CardNoteWindow() {
           <span>{feeling}</span>
           <span>{dateFormated(date)}</span>
           <div className='cnw-settings'>
-            <button type='button'><BsTrash /></button>
-            <button type='button' onClick={handleClickEditbtn}><BiEdit /></button>
+            <button
+              type='button'
+              onClick={handleClickRemovebtn}>
+              <BsTrash />
+            </button>
+            <button
+              type='button'
+              onClick={handleClickEditbtn}>
+              <BiEdit /></button>
           </div>
         </div>
         <hr />
-
         <div className='right-cnw-body'>
           <section>{description}</section>
         </div>

@@ -43,7 +43,7 @@ export default function Navbar() {
             <div >
               <nav to="#">
                 <i className='bx bx-collection' > <BsCalendarDate/></i>
-                <span className="link_name">schedule</span>
+                <span className="link_name">Schedule</span>
               </nav>
               <i className='bx bxs-chevron-down arrow' ></i>
             </div>

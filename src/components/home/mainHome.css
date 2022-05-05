@@ -1,3 +1,4 @@
+
 .home-container {
   background-color: #EAECFE;
   height: 99%;
@@ -13,7 +14,15 @@
 
 .DWM-Components {
   color: rgb(207, 207, 194);
-  font-size: 1.3vw;
+  font-size: clamp(0.8rem,1.3vw,1.6rem);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.DWM-Components:hover {
+  color: #ffffff;
 }
 
 .home-container h1 {
@@ -46,7 +55,7 @@
 
 .feelings-container div {
   width: 10vw;
-  height: 23vh;
+  height: 10rem;
   align-self: center;
   justify-content: center;
   border-radius: 50%;
@@ -92,7 +101,7 @@
 .carousel-item {
   display: flex;
   flex-direction: column;
-  width: 13em;
+  min-width: 13em;
   height: 16em;
   word-wrap: break-word;
   border-radius: 7px;
@@ -200,7 +209,6 @@
 
 .formNote-container button:disabled, .editFormNote-container button:disabled {
   background-color: #11101d36;
-
 }
 
 .formNote-container form, .editFormNote-container form {
@@ -210,7 +218,11 @@
   align-items: center;
   gap: 1rem;
 }
-
+.cnw-header-closebtn:hover {
+  color: #ffffff;
+  transition: all ease-in 100ms;
+  cursor: pointer;
+}
 .closeForm-btn {
   position: absolute;
   top: 0;
@@ -291,7 +303,7 @@
   align-items: center;
 }
 
-.cnw-header  {
+.cnw-header {
   position: relative;
   top: 0;
   right: 0.2rem;
@@ -313,7 +325,8 @@
   width: 10vw;
 
 }
-.left-cnw-body span{
+
+.left-cnw-body span {
   font-style: italic;
   color: rgb(192, 183, 183);
 }
@@ -335,7 +348,17 @@
 .right-cnw-body {
   width: auto;
 }
-.cnw-header-closebtn:hover{
-  color : #ffffff;
-  transition: all ease-in 100ms;
+
+@media screen and (max-width: 860px) {
+  .feelings-container div {
+    width: 4rem;
+    height: 5rem;
+  }
+  .feelings-container{
+    gap: 1.3rem;
+
+  }
+  .feelings-container div span {
+font-size: small;
+  }
 }
