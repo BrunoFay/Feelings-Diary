@@ -72,17 +72,6 @@ export default function Navbar() {
           <li>
             <nav to="#">
               <i className='bx bx-cog' >
-              <BsGraphUp />
-              </i>
-              <span className="link_name">Analytics</span>
-            </nav>
-             <ul className="sub-menu blank">
-              <li><nav className="link_name" to="#">Analytics</nav></li>
-            </ul>
-          </li>
-          <li>
-            <nav to="#">
-              <i className='bx bx-cog' >
                 <IoSettings />
               </i>
               <span className="link_name">Settings</span>
@@ -100,7 +89,6 @@ export default function Navbar() {
                 <div className="profile_name">User</div>
                 <div className="nick">Nickname</div>
               </div>
-              <i className='bx bx-log-out' ></i>
             </div>
           </li>
         </ul>

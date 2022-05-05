@@ -11,11 +11,7 @@ const INITIAL_STATE_EDITEDNOTE = {
 export default function PostContextProvider({ children }) {
   const VISIBLECARD = 'visibleCard';
   const VISIBLEFORM = 'visibleForm';
-  const [notes, setNotes] = useState([{  id: '11',
-    title: 'dd',
-    description: 'ddasdddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddddddddd dddddddddddddddddddd',
-    date: new Date(),
-    feeling: 'Happiness',}])
+  const [notes, setNotes] = useState([])
   const [noteCNW, setNoteCNW] = useState({})
   const [isVisible, setIsVisible] = useState(INITIAL_STATE_VISIBLE)
   const [editedNote, setEditedNote] = useState(INITIAL_STATE_EDITEDNOTE)
@@ -33,7 +29,7 @@ export default function PostContextProvider({ children }) {
 return(`${day} ${month}`)
   }
   const handleClickVisibility = (name) => {
-    setIsVisible({ ...isVisible, [name]: !isVisible[name] })
+    setIsVisible({ [name]: !isVisible[name] })
   };
   const handleKeyPressVisibiliity = (e,name) => {
     if (e.key === 'Enter') {

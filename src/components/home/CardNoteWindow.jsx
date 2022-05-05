@@ -10,12 +10,20 @@ export default function CardNoteWindow() {
     noteCNW,
     dateFormated,
     VISIBLECARD,
+    VISIBLEFORM,
     handleKeyPressVisibiliity,
-    handleClickVisibility } = useContext(postContext)
+    handleClickVisibility,
+    setEditedNote } = useContext(postContext)
   const { title, description, feeling, date } = noteCNW
-  const handleClick = () => {
-    console.log('click');
+
+  const handleClickClosebtn = () => {
     handleClickVisibility(VISIBLECARD)
+    setEditedNote({ status: false, note: [] })
+
+  }
+  const handleClickEditbtn = () => {
+    handleClickVisibility(VISIBLEFORM)
+    setEditedNote({ status: true, note: noteCNW })
   }
 
   return (
@@ -23,7 +31,9 @@ export default function CardNoteWindow() {
       <section className='cnw-header'>
         <h1>{title}</h1>
         <div
-          onClick={handleClick}
+          className='cnw-header-closebtn'
+          onClick={handleClickClosebtn}
+          tabIndex='0'
           onKeyDown={(e) => handleKeyPressVisibiliity(e, VISIBLECARD)}>
           < IoClose />
         </div>
@@ -34,8 +44,8 @@ export default function CardNoteWindow() {
           <span>{feeling}</span>
           <span>{dateFormated(date)}</span>
           <div className='cnw-settings'>
-            <button><BsTrash /></button>
-            <button><BiEdit /></button>
+            <button type='button'><BsTrash /></button>
+            <button type='button' onClick={handleClickEditbtn}><BiEdit /></button>
           </div>
         </div>
         <hr />

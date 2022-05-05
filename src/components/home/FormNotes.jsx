@@ -13,6 +13,7 @@ const INITIAL_STATE_NOTE = {
 export default function FormNotes({ feelings }) {
   const {
     notes,
+    noteCNW,
     setNotes,
     VISIBLEFORM,
     editedNote,
@@ -22,7 +23,7 @@ export default function FormNotes({ feelings }) {
   } = useContext(postContext)
   const [note, setNote] = useState(INITIAL_STATE_NOTE)
   const [disableBtn, setdisableBtn] = useState(true)
-  const noteToEdit = notes.find(note => note.id === editedNote.note.id)
+  const noteToEdit = notes.find(note => note.id == noteCNW.id)
 
   useEffect(() => {
     if (note.title !== '' || note.description !== '') {
@@ -40,11 +41,16 @@ export default function FormNotes({ feelings }) {
 
   const handleChange = ({ target: { name, value } }) => {
     setNote({ ...note, date: new Date(), [name]: value })
-
   }
   const handleClick = (e) => {
     e.preventDefault()
-    setNotes([...notes, note])
+    if (editedNote.status) {
+      const newNotes = notes.filter(note => note.id !== noteToEdit.id)
+      setNotes([...newNotes, note])
+
+    } else {
+      setNotes([...notes, note])
+    }
     setNote({ ...INITIAL_STATE_NOTE, id: uuidv4() })
     setEditedNote({ note: [], status: false })
   }
@@ -54,11 +60,11 @@ export default function FormNotes({ feelings }) {
         <div
           className='closeForm-btn'
           onClick={() => handleClickVisibility(VISIBLEFORM)}
-          onKeyDown={(e) => handleKeyPressVisibiliity(e,VISIBLEFORM)}
+          onKeyDown={(e) => handleKeyPressVisibiliity(e, VISIBLEFORM)}
         >
           <IoClose />
         </div>
-        <select onChange={handleChange} name='feeling' id='fellings'>
+        <select onChange={handleChange} value={note.feeling}name='feeling' id='fellings'>
           {feelings.map(({ title, id }) => (<option key={id} value={title}>{title}</option>))}
         </select>
         <span> Title</span>
@@ -79,7 +85,7 @@ export default function FormNotes({ feelings }) {
         <button
           onClick={handleClick}
           disabled={disableBtn}>
-          Send</button>
+          {editedNote.status ? 'Edit' : 'Send'}</button>
       </form>
     </main>
   )
