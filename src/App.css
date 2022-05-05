@@ -7,14 +7,21 @@
   --bgcolorAng:#da0404;
   --bgcolorFer :#003e57;
   --colorTitleAndPorcentage:#f7fff7;
+  --colorWhite: #ffffff;
+  background: #bbcc5d;
+
 }
 
 textarea {
   resize: none;
 }
+input,textarea{
+  outline: none;
+  padding:0 0.4rem;
+  
+}
 .main-container{
   position: relative;
-  background: #bbcc5d;
   height: 100vh;
   left: 260px;
   width: 81vw;

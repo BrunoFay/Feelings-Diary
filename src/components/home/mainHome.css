@@ -196,7 +196,7 @@
 
 .formNote-container button, .editFormNote-container button {
   background-color: #11101d;
-  color: rgb(192, 183, 183);
+  color: var(--colorWhite);
   border: none;
   border-radius: 7px;
   padding: 0.5rem 1rem;

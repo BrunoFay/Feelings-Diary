@@ -1,11 +1,11 @@
 import './App.css';
 import {
- BrowserRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
 import Home from './pages/Home';
-import Analytics from './pages/Analytics';
+import Schedule from './pages/Schedule';
 import Posts from './pages/Posts';
 import Settings from './pages/Settings';
 
@@ -17,7 +17,11 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/schedule" element={<Schedule />}>
+          <Route path="events" />
+          <Route path="birthdays" />
+          <Route path="meetings" />
+        </Route>
         <Route path="/posts" element={<Posts />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>

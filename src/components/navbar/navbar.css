@@ -9,7 +9,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
+a{
+  text-decoration: none;
+}
 .sidebar {
   position: fixed;
   top: 0;
@@ -143,7 +145,7 @@
   display: block;
 }
 
-.sidebar .nav-links li .sub-menu nav {
+.sidebar .nav-links li .sub-menu nav a {
   color: #fff;
   font-size: 15px;
   padding: 5px 0;
@@ -152,7 +154,8 @@
   transition: all 0.3s ease;
 }
 
-.sidebar .nav-links li .sub-menu nav:hover {
+
+.sidebar .nav-links li .sub-menu nav a:hover {
   opacity: 1;
 }
 
