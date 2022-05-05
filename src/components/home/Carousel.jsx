@@ -1,10 +1,10 @@
-import React, { useRef, useContext, useSta, useRefte } from 'react'
+import React, { useRef, useContext} from 'react'
 import NoteContainer from './NoteContainer';
 import postContext from '../../context/postsContext';
 import useDragScroll from '../../hooks/useDragScroll';
 
 export default function Carousel() {
-  const { notes } = useContext(postContext)
+  const { notes,notesFiltred } = useContext(postContext)
   const carouselRef = useRef(null)
   const { onMouseDown } = useDragScroll(carouselRef, { direction: 'horizontal' });
 
@@ -16,7 +16,7 @@ export default function Carousel() {
       onKeyDown={onMouseDown}
       tabIndex='0'
     >
-      {notes.map((note) => (<NoteContainer key={note.id} note={note} />))}
+      {notesFiltred || notes.map((note) => (<NoteContainer key={note.id} note={note} />))}
     </div>
   )
 }

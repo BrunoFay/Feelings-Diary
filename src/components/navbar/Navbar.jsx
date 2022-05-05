@@ -14,7 +14,6 @@ export default function Navbar() {
   const sidebar = useRef();
 
   function sideBarClicked() {
-    console.log(sidebar.current)
     return sidebar.current.classList.toggle("close");
   }
 
@@ -69,9 +68,6 @@ export default function Navbar() {
               </div>
               <ul className="sub-menu">
                 <li><nav className="link_name" >Posts</nav></li>
-                <li><nav >Web Design</nav></li>
-                <li><nav >Login Form</nav></li>
-                <li><nav >Card Design</nav></li>
               </ul>
             </li>
           </Link>

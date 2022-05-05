@@ -12,6 +12,7 @@ export default function PostContextProvider({ children }) {
   const VISIBLECARD = 'visibleCard';
   const VISIBLEFORM = 'visibleForm';
   const [notes, setNotes] = useState([])
+  const [notesFiltred,setNotesFiltred]=([])
   const [noteCNW, setNoteCNW] = useState({})
   const [isVisible, setIsVisible] = useState(INITIAL_STATE_VISIBLE)
   const [editedNote, setEditedNote] = useState(INITIAL_STATE_EDITEDNOTE)
@@ -39,6 +40,10 @@ return(`${day} ${month}`)
   const contextValue = {
     notes,
     setNotes,
+    notesFiltred,
+    setNotesFiltred,
+    noteCNW,
+    setNoteCNW,
     percentageArray,
     calculatePercentage,
     handleClickVisibility,
@@ -50,8 +55,6 @@ return(`${day} ${month}`)
     VISIBLEFORM,
     editedNote,
     setEditedNote,
-    noteCNW,
-    setNoteCNW,
   }
   return (
     <postContext.Provider value={contextValue}>
