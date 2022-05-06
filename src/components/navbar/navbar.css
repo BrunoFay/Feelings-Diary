@@ -85,13 +85,13 @@ a{
   background: #1d1b31;
 }
 
-.sidebar .nav-links li .iocn-link {
+.sidebar .nav-links li .icon-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.sidebar.close .nav-links li .iocn-link {
+.sidebar.close .nav-links li .icon-link {
   display: block
 }
 
@@ -172,7 +172,7 @@ a{
   transition: 0s;
 }
 
-.sidebar.close .nav-links li:hover .sub-menu {
+.sidebar.close .nav-links li:hover .sub-menu  {
   top: 0;
   opacity: 1;
   pointer-events: auto;

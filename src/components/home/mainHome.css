@@ -1,7 +1,5 @@
-
 .home-container {
   background-color: #EAECFE;
-  height: 99%;
   width: 99%;
   flex-wrap: wrap;
   position: relative;
@@ -14,14 +12,14 @@
 
 .DWM-Components {
   color: rgb(207, 207, 194);
-  font-size: clamp(0.8rem,1.3vw,1.6rem);
+  font-size: clamp(0.8rem, 1.3vw, 1.6rem);
   border: none;
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.DWM-Components:hover,.DWM-Components:focus {
+.DWM-Components:hover, .DWM-Components:focus {
   color: #ffffff;
   outline: none;
 }
@@ -144,7 +142,6 @@
 .new-post {
   display: flex;
   background-color: rgba(198, 221, 202, 0.342);
-  width: 7vw;
   height: 12vh;
   border-radius: 7px;
   transition: all ease-in 150ms;
@@ -220,11 +217,13 @@
   align-items: center;
   gap: 1rem;
 }
+
 .cnw-header-closebtn:hover {
   color: #ffffff;
   transition: all ease-in 100ms;
   cursor: pointer;
 }
+
 .closeForm-btn {
   position: absolute;
   top: 0;
@@ -356,11 +355,48 @@
     width: 4rem;
     height: 5rem;
   }
-  .feelings-container{
+
+  .feelings-container {
     gap: 1.3rem;
 
   }
+  .home-container nav{
+    gap: 1rem;
+  }
+
   .feelings-container div span {
-font-size: small;
+    font-size: small;
+  }
+
+  .carousel-item {
+    height: 13em;
+    min-width: 10em;
+  }
+  .new-post {
+    width: 5rem;
+    left: 0;
+  }
+  .notes-container {
+    flex-direction: column;
+  }
+  .new-post {
+    width: 25vw;
+    left: 0;
+  }
+}
+
+@media screen and (min-width:860px) {
+  .home-container{
+    height: 100%;
+  }
+  .new-post {
+    width: 8vw;
+    left: 0;
+  }
+}
+@media screen and (min-width:860px) and (max-width: 1300px) {
+  .feelings-container div {
+    width: 7rem;
+    height: 8rem;
   }
 }

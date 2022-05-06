@@ -64,7 +64,7 @@ export default function FormNotes({ feelings }) {
         >
           <IoClose />
         </div>
-        <select onChange={handleChange} value={note.feeling}name='feeling' id='fellings'>
+        <select onChange={handleChange} value={note.feeling} name='feeling' id='fellings'>
           {feelings.map(({ title, id }) => (<option key={id} value={title}>{title}</option>))}
         </select>
         <span> Title</span>

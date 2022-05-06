@@ -9,14 +9,14 @@ export default function NoteContainer({ note }) {
     VISIBLECARD,
     setNoteCNW,
     dateFormated } = useContext(postContext)
- 
+
   const handleClick = () => {
     setNoteCNW(note)
     handleClickVisibility(VISIBLECARD)
   }
   const handleKeyPress = (e) => {
     setNoteCNW(note)
-    handleKeyPressVisibiliity(e,VISIBLECARD)
+    handleKeyPressVisibiliity(e, VISIBLECARD)
   }
   return (
     <article
