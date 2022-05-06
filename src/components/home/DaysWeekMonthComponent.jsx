@@ -3,31 +3,54 @@ import postsContext from '../../context/postsContext'
 
 export default function DaysWeekMonthComponent() {
   const { notes, setNotesFiltred } = useContext(postsContext)
-  const noteWithDateFormated = notes.map((notes) => ({ ...notes, date: notes.date.toISOString().slice(0, 10) }))
+
+  const formatDateToYYYYMMDD = (date) => {
+    return date.toISOString().slice(0, 10)
+  }
+  const noteWithDateFormated = notes
+    .map((notes) => ({ ...notes, date: formatDateToYYYYMMDD(notes.date) }))
   const currentDate = new Date;
+  const convertDateToValidFormat = (date) => {
+    const dateFormated = new Date(date)
+    return dateFormated
+  }
+  const convertObjectsToValidFormat = (notes) => {
+    const noteValidFormat = notes.map((note) => ({ ...note, date: convertDateToValidFormat(note.date) }))
+    return noteValidFormat
+  }
   const filterByWeek = () => {
     const firstdayOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay()));
     const lastDayOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 6));
-    const firstDayOfWeekFormated = firstdayOfWeek.toISOString().slice(0, 10)
-    const lastDayOfWeekFormated = lastDayOfWeek.toISOString().slice(0, 10)
-
+    const firstDayOfWeekFormated = formatDateToYYYYMMDD(firstdayOfWeek)
+    const lastDayOfWeekFormated = formatDateToYYYYMMDD(lastDayOfWeek)
     const notesWeek = noteWithDateFormated.filter((note) => (note.date >= firstDayOfWeekFormated && note.date <= lastDayOfWeekFormated))
-    setNotesFiltred(notesWeek)
+    const notesWeekFormated = convertObjectsToValidFormat(notesWeek)
+    setNotesFiltred(notesWeekFormated)
   }
+
   const filterByMonth = () => {
     const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
     const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-    const firstDayOfMonthFormated = firstDayOfMonth.toISOString().slice(0, 10)
-    const lastDayOfMonthFormated = lastDayOfMonth.toISOString().slice(0, 10)
+    const firstDayOfMonthFormated = formatDateToYYYYMMDD(firstDayOfMonth)
+    const lastDayOfMonthFormated = formatDateToYYYYMMDD(lastDayOfMonth)
     const notesMonth = noteWithDateFormated.filter((note) => (note.date >= firstDayOfMonthFormated && note.date <= lastDayOfMonthFormated))
-    setNotesFiltred(notesMonth)
+    const notesMonthFormated = convertObjectsToValidFormat(notesMonth)
+    setNotesFiltred(notesMonthFormated)
   }
+
   const filterByDay = () => {
     const notesDay = noteWithDateFormated.filter((note) => (note.date === currentDate.toISOString().slice(0, 10)))
-    setNotesFiltred(notesDay)
+    const notesDayFormated = convertObjectsToValidFormat(notesDay)
+    setNotesFiltred(notesDayFormated)
   }
   return (
     <nav>
+      <button
+        type='button'
+        onClick={() => setNotesFiltred([])}
+        className='DWM-Components'>
+        All
+      </button>
       <button
         type='button'
         onClick={filterByDay}

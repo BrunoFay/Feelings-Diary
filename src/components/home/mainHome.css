@@ -21,8 +21,9 @@
   transition: all 0.3s;
 }
 
-.DWM-Components:hover {
+.DWM-Components:hover,.DWM-Components:focus {
   color: #ffffff;
+  outline: none;
 }
 
 .home-container h1 {

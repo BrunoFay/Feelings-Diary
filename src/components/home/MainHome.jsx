@@ -3,7 +3,7 @@ import './mainHome.css'
 import DaysWeekMonthComponent from './DaysWeekMonthComponent'
 import FormNotes from './FormNotes'
 import { AiOutlinePlus } from 'react-icons/ai';
-import FeelingContainer from './FeelingContainer';
+import FeelingPercentageContainer from './FeelingPercentageContainer';
 import Carousel from './Carousel';
 import CardNoteWindow from './CardNoteWindow';
 import postContext from '../../context/postsContext';
@@ -21,7 +21,7 @@ export default function MainHome() {
       <section className='feelings-container'>
         {ARRAY_FEELINGS
           .map(({ title }) => (
-            <FeelingContainer key={title} title={title} />)
+            <FeelingPercentageContainer key={title} title={title} />)
           )}
       </section>
       <h1>My Notes</h1>
