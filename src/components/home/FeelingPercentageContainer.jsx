@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import postContext from '../../context/postsContext';
 
 export default function FeelingContainer({ title }) {

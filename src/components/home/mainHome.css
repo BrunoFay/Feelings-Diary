@@ -129,6 +129,7 @@
   color: rgb(179, 176, 164);
   text-shadow: 1px 0px 1px black;
   font-weight: bolder;
+  padding-left: 3px;
 }
 
 .carousel-item span:nth-last-child(1) {
