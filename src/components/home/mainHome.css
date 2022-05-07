@@ -1,5 +1,5 @@
 .home-container {
-  background-color: #EAECFE;
+  background-color: var(--colorMainHomeContainer);
   width: 99%;
   flex-wrap: wrap;
   position: relative;
@@ -26,6 +26,7 @@
 
 .home-container h1 {
   margin-left: 1rem;
+  color: var(--bgcolorSad);
 }
 
 .sidebar.close .home-container {
@@ -37,7 +38,7 @@
   display: flex;
   gap: 2rem;
   padding: 0.5rem;
-  background-color: blueviolet;
+  background-color: var(--bgcolorDWMSection);
 }
 
 .home-container nav span {
@@ -50,6 +51,8 @@
   padding: 1em;
   flex-wrap: wrap;
   justify-content: center;
+  font-weight: 500;
+  color: var(--bgcolorSad);
 }
 
 .feelings-container div {
@@ -109,7 +112,9 @@
 
 .carousel-item h3 {
   padding: 0 0.5rem;
-  color: var(--colorTitleAndPorcentage);
+  color: var(--colorTitleAndPercentage);
+  background-color: #110f2715;
+
 }
 
 .carousel-item p {
@@ -124,7 +129,7 @@
 
 .carousel-item span:nth-child(1) {
   font-style: italic;
-  color: rgb(179, 176, 164);
+  color: var(--colorWhite);
   text-shadow: 1px 0px 1px black;
   font-weight: bolder;
   padding-left: 3px;
@@ -134,9 +139,9 @@
   text-align: right;
   font-size: smaller;
   padding-right: 1rem;
-  color: var(--colorTitleAndPorcentage);
-  text-shadow: 1px 0px 1px black;
-
+  color: var(--colorWhite);
+  text-shadow: 1px 0px 3px black;
+  background-color: #110f2715;
 }
 
 .new-post {
@@ -166,7 +171,7 @@
 }
 
 .editFormNote-container {
-  background-color: #6b7e04b6;
+  background-color: var(--bgCardEdit);
 }
 
 .formNote-container {
@@ -187,8 +192,7 @@
 }
 
 .formNote-container span, .editFormNote-container span {
-  color: var(--colorTitleAndPorcentage);
-  font-size: 1.5vw;
+  color: var(--colorTitleAndPercentage);
   font-weight: bolder;
   text-shadow: 1px 0px 1px black;
 }
@@ -218,8 +222,8 @@
   gap: 1rem;
 }
 
-.cnw-header-closebtn:hover {
-  color: #ffffff;
+.cnw-header-closebtn:hover, .closeForm-btn:hover {
+  color: var(--bgcolorAng);
   transition: all ease-in 100ms;
   cursor: pointer;
 }
@@ -271,7 +275,7 @@
 
 .div-feeling div>span {
   align-self: center;
-  color: var(--colorTitleAndPorcentage);
+  color: var(--colorTitleAndPercentage);
   font-size: 1.5vw;
 }
 
@@ -282,8 +286,10 @@
   top: 20vh;
   border-radius: 7px;
   display: flex;
-  background-color: #1f5f22;
+  background-color: var(--bgcolorDWMSection);
   flex-direction: column;
+  color: var(--colorWhite);
+  box-shadow: 0px 1px 8px 5px rgb(77 75 75);
 }
 
 .CardNoteWindow .cnw-settings button {
@@ -295,6 +301,18 @@
   cursor: pointer;
   font-size: 1.3rem;
   transition: all ease-in 150ms;
+  border: 1px solid transparent ;
+
+}
+.cnw-settings button:hover{
+  color: var(--colorWhite);
+  border:1px solid var(--colorWhite) ;
+  
+  
+}
+.CardNoteWindow hr {
+  border: 3px solid var(--colorWhite);
+  border-radius: 1px;
 }
 
 .cnw-header {
@@ -304,6 +322,9 @@
   align-items: center;
 }
 
+.cnw-header h1{
+  color: var(--colorMainHomeContainer);
+}
 .cnw-header {
   position: relative;
   top: 0;
@@ -329,7 +350,7 @@
 
 .left-cnw-body span {
   font-style: italic;
-  color: rgb(192, 183, 183);
+  color: var(--colorWhite);
 }
 
 .cnw-settings {
@@ -340,14 +361,15 @@
 }
 
 .right-cnw-body section {
-  color: var(--colorTitleAndPorcentage);
+  color: var(--bgcolorSad);
   padding: 0.5rem;
   height: 100%;
   max-width: 34rem;
 }
 
 .right-cnw-body {
-  width: auto;
+  background-color:var(--colorMainHomeContainer);
+  width: 80%;
 }
 
 @media screen and (max-width: 860px) {
@@ -360,7 +382,8 @@
     gap: 1.3rem;
 
   }
-  .home-container nav{
+
+  .home-container nav {
     gap: 1rem;
   }
 
@@ -370,33 +393,92 @@
 
   .carousel-item {
     height: 13em;
-    min-width: 10em;
+    max-width: 10em;
+    overflow: hidden;
   }
+
   .new-post {
     width: 5rem;
     left: 0;
   }
+
   .notes-container {
     flex-direction: column;
   }
+
   .new-post {
     width: 25vw;
     left: 0;
   }
+
+  .formNote-container, .editFormNote-container {
+    font-size: 0.8rem;
+    width: 70vw;
+    align-self: center;
+  }
+
+  .CardNoteWindow {
+    width: 73vw;
+  }
+
+  .left-cnw-body {
+    width: 25vw;
+  }
+
+  .cnw-settings {
+    flex-direction: column;
+    gap: 1em;
+  }
 }
 
 @media screen and (min-width:860px) {
-  .home-container{
+  .home-container {
     height: 100%;
   }
+
   .new-post {
     width: 8vw;
     left: 0;
   }
+
+  .formNote-container span, .editFormNote-container span {
+    font-size: 1.5vw;
+
+  }
 }
+
 @media screen and (min-width:860px) and (max-width: 1300px) {
   .feelings-container div {
     width: 7rem;
     height: 8rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .main-container {
+    left: 10.5rem
+  }
+
+  .formNote-container, .editFormNote-container, .CardNoteWindow {
+    height: 20rem;
+
+  }
+
+  .sidebar.close~.main-container {
+    left: 4.9rem
+  }
+
+  .formNote-container input, .editFormNote-container input {
+    max-width: 15em;
+  }
+
+  textarea {
+    max-width: 13.5rem;
+    max-height: 123px;
+  }
+
+  .CardNoteWindow {
+    right: 0.3rem;
+
   }
 }

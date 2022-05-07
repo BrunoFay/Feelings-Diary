@@ -1,13 +1,16 @@
 :root {
   margin: 0;
   padding: 0;
-  --bgcolorHap: #f89b21;
-  --bgcolorSad: #161514;
-  --bgcolorNeu: #807e7e;
-  --bgcolorAng:#da0404;
-  --bgcolorFer :#003e57;
-  --colorTitleAndPorcentage:#f7fff7;
+  --bgcolorHap: #ffa801;
+  --bgcolorSad: #1e272e;
+  --bgcolorNeu: #4086BF;
+  --bgcolorAng: #ff3f34;
+  --bgcolorFer: #038347;
+  --colorTitleAndPercentage: #f7fff7;
   --colorWhite: #ffffff;
+  --colorMainHomeContainer: #EAECFE;
+  --bgcolorDWMSection: #11101d;
+  --bgCardEdit: #6b7e04b6;
   background: #bbcc5d;
 
 }
@@ -15,37 +18,43 @@
 textarea {
   resize: none;
 }
-input,textarea{
+
+input, textarea {
   outline: none;
-  padding:0 0.4rem;
-  
+  padding: 0 0.4rem;
+
 }
-.main-container{
+
+.main-container {
   position: relative;
   height: 100vh;
   left: 260px;
   width: 81vw;
   transition: all 0.5s ease;
 }
-.sidebar.close ~ .main-container{
+
+.sidebar.close~.main-container {
   left: 78px;
   width: calc(100% - 78px);
 }
 
-.main-container .main-content{
+.main-container .main-content {
   display: flex;
   align-items: center;
 }
+
 .main-container.bx-menu,
-.main-container.text{
+.main-container.text {
   color: #09016b;
   font-size: 35px;
 }
-.main-container.bx-menu{
+
+.main-container.bx-menu {
   /* margin: 0 15px; */
   cursor: pointer;
 }
-.main-container.text{
+
+.main-container.text {
   font-size: 26px;
   font-weight: 600;
 }

@@ -265,8 +265,18 @@ a{
   font-style: italic;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 530px) {
   .sidebar.close .nav-links li .sub-menu {
     display: none;
   }
+  .sidebar .nav-links li nav .link_name {
+    font-size: 1rem;
+  }
+  .sidebar .logo-details {
+    flex-direction: column;
+  }
+  .sidebar,.sidebar .profile-details {
+    width: 10.5rem;
+  }
+  
 }
