@@ -18,9 +18,12 @@ a{
   left: 0;
   height: 100%;
   width: 260px;
-  background: #11101d;
+  background:var(--colorMainHomeContainer);
   z-index: 100;
   transition: all 0.5s ease;
+}
+.darkMode-sidebar{
+  background-color: var(--bgcolorDWMSection);
 }
 
 .sidebar.close {
@@ -36,13 +39,15 @@ a{
 
 .sidebar .logo-details i {
   font-size: 30px;
-  color: #fff;
   height: 50px;
   min-width: 78px;
   text-align: center;
   line-height: 50px;
+  color: var(--bgcolorDWMSection);
 }
-
+.darkMode-sidebar .logo-details i{
+  color: #fff;
+ }
 .sidebar .logo-details .logo_name {
   font-size: 22px;
   color: #fff;
@@ -78,9 +83,11 @@ a{
   position: relative;
   list-style: none;
   transition: all 0.4s ease;
+  color: var(--bgcolorDWMSection);
+}
+.darkMode-sidebar .nav-links li{
   color: #fff;
 }
-
 .sidebar .nav-links li:hover {
   background: #1d1b31;
 }
@@ -100,12 +107,18 @@ a{
   min-width: 78px;
   text-align: center;
   line-height: 58px;
-  color: #fff;
   font-size: 20px;
   cursor: pointer;
+  color: var(--bgcolorDWMSection);
   transition: all 0.3s ease;
 }
 
+.darkMode-sidebar .nav-links li i{
+  color: var(--colorMainHomeContainer);
+}
+.sidebar .nav-links li i:hover{
+  color:#fff
+}
 .sidebar .nav-links li.showMenu i.arrow {
   transform: rotate(-180deg);
 }
@@ -187,6 +200,7 @@ a{
   font-size: 18px;
   opacity: 1;
   display: block;
+  color: #fff;
 }
 
 .sidebar .nav-links li .sub-menu.blank {

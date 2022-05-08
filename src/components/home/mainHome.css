@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 7px;
+  transition: all 0.5s ease;
 }
 
 .DWM-Components {
@@ -16,8 +17,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.3s;
-}
+  transition: all 0.5s ease;}
 
 .DWM-Components:hover, .DWM-Components:focus {
   color: #ffffff;
@@ -481,4 +481,16 @@
     right: 0.3rem;
 
   }
+}
+.darkmode-homeContainer{
+  background-color: #18181b;
+}
+.home-container .darkMode-navFilters{
+  background-color: #52525b;
+}
+.home-container .darkMode-titles{
+  color: #f4f4f5;
+}
+.darkMode-fel-percent-names{
+  color: #a1a1aa;
 }

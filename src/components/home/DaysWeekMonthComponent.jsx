@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
+import { darkModeContext } from '../../context/darkModeContext'
 import postsContext from '../../context/postsContext'
 
 export default function DaysWeekMonthComponent() {
   const { notes, setNotesFiltred } = useContext(postsContext)
-
+  const { isDarkMode } = useContext(darkModeContext)
   const formatDateToYYYYMMDD = (date) => {
     return date.toISOString().slice(0, 10)
   }
@@ -44,7 +45,7 @@ export default function DaysWeekMonthComponent() {
     setNotesFiltred(notesDayFormated)
   }
   return (
-    <nav>
+    <nav className={isDarkMode ? 'darkMode-navFilters':null}>
       <button
         type='button'
         onClick={() => setNotesFiltred([])}

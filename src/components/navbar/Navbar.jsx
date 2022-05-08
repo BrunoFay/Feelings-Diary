@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Link } from 'react-router-dom';
 import { VscThreeBars } from 'react-icons/vsc';
 import { IoHome } from 'react-icons/io5';
@@ -6,20 +6,35 @@ import { IoSettings } from 'react-icons/io5';
 import { CgBox } from 'react-icons/cg';
 import { BsCalendarDate } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
+import { FiSun } from 'react-icons/fi';
+import { FiMoon } from 'react-icons/fi';
+import { darkModeContext } from '../../context/darkModeContext';
 import "./navbar.css"
 
 /* reference https://www.codinglabweb.com/2021/06/dropdown-sidebar-menu-html-css.html */
 
 export default function Navbar() {
   const sidebar = useRef();
-
+  const { isDarkMode, toggleMode } = useContext(darkModeContext);
   function sideBarClicked() {
     return sidebar.current.classList.toggle("close");
+  }
+  function toggleThemeMode() {
+    return isDarkMode ? (
+
+      <i onClick={() => toggleMode(false)}>
+        <FiMoon />
+      </i>
+    ) : (
+      <i onClick={() => toggleMode(true)}>
+        <FiSun />
+      </i>
+    )
   }
 
   return (
     <>
-      <aside className="sidebar close" ref={sidebar} >
+      <aside className={isDarkMode?"sidebar darkMode-sidebar close":"sidebar close"} ref={sidebar} >
         <div className="logo-details" onClick={sideBarClicked}>
           <i className='bx bxl-c-plus-plus'>
             <VscThreeBars />
@@ -85,6 +100,9 @@ export default function Navbar() {
             </li>
           </Link>
           <li>
+            <div style={{ display: "flex" }}>
+              {toggleThemeMode()}
+            </div>
             <div className="profile-details">
               <div className="profile-content">
                 <AiOutlineUser />

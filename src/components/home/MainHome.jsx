@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, } from 'react'
 import './mainHome.css'
 import DaysWeekMonthComponent from './DaysWeekMonthComponent'
 import FormNotes from './FormNotes'
@@ -7,6 +7,7 @@ import FeelingPercentageContainer from './FeelingPercentageContainer';
 import Carousel from './Carousel';
 import CardNoteWindow from './CardNoteWindow';
 import postContext from '../../context/postsContext';
+import { darkModeContext } from '../../context/darkModeContext';
 
 const ARRAY_FEELINGS = [{ title: 'Happiness' }, { title: 'Sadness' },
 { title: 'Anger' }, { title: 'Fear' }, { title: 'Neutral' }]
@@ -14,9 +15,10 @@ const ARRAY_FEELINGS = [{ title: 'Happiness' }, { title: 'Sadness' },
 
 export default function MainHome() {
   const { isVisible, handleClickVisibility, VISIBLEFORM } = useContext(postContext)
+  const { isDarkMode } = useContext(darkModeContext)
   return (
-    <main className='home-container'>
-      <h1>Feelings</h1>
+    <main className={isDarkMode ? 'home-container darkmode-homeContainer' : 'home-container'}>
+      <h1 className={isDarkMode ? 'darkMode-titles' : null}>Feelings</h1>
       <DaysWeekMonthComponent />
       <section className='feelings-container'>
         {ARRAY_FEELINGS
@@ -24,12 +26,12 @@ export default function MainHome() {
             <FeelingPercentageContainer key={title} title={title} />)
           )}
       </section>
-      <h1>My Notes</h1>
+      <h1 className={isDarkMode ? 'darkMode-titles' : null}>My Notes</h1>
       <DaysWeekMonthComponent />
       <section className='notes-container'>
         {isVisible.visibleForm && (<FormNotes feelings={ARRAY_FEELINGS} />)}
         <Carousel />
-        {isVisible.visibleCard && (<CardNoteWindow />) }
+        {isVisible.visibleCard && (<CardNoteWindow />)}
         <button className='new-post' onClick={() => handleClickVisibility(VISIBLEFORM)}>
           <AiOutlinePlus />
         </button>

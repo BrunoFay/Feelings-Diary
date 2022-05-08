@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import PostContextProvider from './context/PostContextProvider';
+import DarkModeContextProvider from './context/DarkModeContextProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PostContextProvider>
-      <App />
-    </PostContextProvider>
+    <DarkModeContextProvider>
+      <PostContextProvider>
+        <App />
+      </PostContextProvider>
+    </DarkModeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
