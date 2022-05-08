@@ -1,6 +1,17 @@
+import { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { loginContext } from '../../context/loginContext'
 import './cardLogin.css'
 
 export default function CardLogin() {
+  const { user, handleChange, isLogged, setIsLogged } = useContext(loginContext)
+  const navegate = useNavigate()
+  useEffect(() => {
+    if (isLogged) {
+      navegate('/home')
+      setIsLogged(false)
+    }
+  }, [isLogged])
   return (
     <main className='login-main'>
       <div className='login-container'>
@@ -13,13 +24,23 @@ export default function CardLogin() {
           <form>
             <label>
               Email
-              <input type="text" placeholder='exemple@exemple.com' />
+              <input
+                onChange={(e) => handleChange(e)}
+                type="text"
+                name='email'
+                value={user.email}
+                placeholder='exemple@exemple.com' />
             </label>
             <label>
               Password
-              <input type="password" />
+              <input
+                onChange={(e) => handleChange(e)}
+                type="password"
+                name='password'
+                value={user.password}
+              />
             </label>
-            <button>Sing in</button>
+            <button onClick={()=>setIsLogged(true)}>Sing in</button>
           </form>
           <span className='madeBy'>Made By Bruno Fay</span>
         </section>

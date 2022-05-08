@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import postContext from '../../context/postsContext'
 import { IoClose } from 'react-icons/io5';
 import { v4 as uuidv4 } from 'uuid';
+import { useHandleChange } from '../../hooks/useHandleChange';
 
 const INITIAL_STATE_NOTE = {
   id: uuidv4(),
@@ -21,9 +22,9 @@ export default function FormNotes({ feelings }) {
     handleKeyPressVisibiliity,
     handleClickVisibility
   } = useContext(postContext)
-  const [note, setNote] = useState(INITIAL_STATE_NOTE)
+  const [note, setNote, handleChange] = useHandleChange(INITIAL_STATE_NOTE)
   const [disableBtn, setdisableBtn] = useState(true)
-  const noteToEdit = notes.find(note => note.id == noteCNW.id)
+  const noteToEdit = notes.find(note => note.id === noteCNW.id)
 
   useEffect(() => {
     if (note.title !== '' || note.description !== '') {
@@ -39,9 +40,6 @@ export default function FormNotes({ feelings }) {
     }
   }, [editedNote])
 
-  const handleChange = ({ target: { name, value } }) => {
-    setNote({ ...note, date: new Date(), [name]: value })
-  }
   const handleClick = (e) => {
     e.preventDefault()
     if (editedNote.status) {
@@ -64,12 +62,12 @@ export default function FormNotes({ feelings }) {
         >
           <IoClose />
         </div>
-        <select onChange={handleChange} value={note.feeling} name='feeling' id='fellings'>
+        <select onChange={(e) => handleChange(e, { date: new Date() })} value={note.feeling} name='feeling' id='fellings'>
           {feelings.map(({ title, id }) => (<option key={id} value={title}>{title}</option>))}
         </select>
         <span> Title</span>
         <input
-          onChange={handleChange}
+          onChange={(e) => handleChange(e, { date: new Date() })}
           value={note.title}
           type='text'
           name='title'
@@ -77,7 +75,7 @@ export default function FormNotes({ feelings }) {
         <span> What generated this feeling ?</span>
 
         <textarea
-          onChange={handleChange}
+          onChange={(e) => handleChange(e, { date: new Date() })}
           name='description'
           value={note.description}
           cols='30'
