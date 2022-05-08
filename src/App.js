@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Schedule from './pages/Schedule';
 import Posts from './pages/Posts';
 import Settings from './pages/Settings';
+import Login from './pages/Login';
 
 
 
@@ -16,7 +17,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/schedule" element={<Schedule />}>
           <Route path="events" />
           <Route path="birthdays" />

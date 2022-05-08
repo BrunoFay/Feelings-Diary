@@ -1,0 +1,103 @@
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.login-main h1 {
+  align-self: center;
+  font-size: 2.3rem;
+  background-image: url(https://images.unsplash.com/photo-1606767041004-6b918abe92be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTc1fHxhY3J5bGljfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+
+
+.login-container {
+  display: flex;
+  justify-self: center;
+  height: 80vh;
+  width: 60vw;
+
+}
+
+.login-container div {
+  border-radius: 10px 0 0 10px;
+}
+
+.login-container div, .login-container section {
+  width: 52%;
+  background: var(--bglinksAndIcons);
+
+}
+
+
+.login-container section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+  flex-direction: column;
+  background: var(--colorMainHomeContainer);
+}
+
+.madeBy {
+  font-size: small;
+  font-style: italic;
+  color: rgba(102, 98, 98, 0.815);
+  cursor: default;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  background: var(--bglinksAndIcons);
+  gap: 2rem;
+  align-items: center;
+  height: 40vh;
+  width: 80%;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.login-container form input {
+  width: 20vw;
+  height: 1.6rem;
+  border-radius: 3px;
+  border: none;
+}
+
+.login-container form button {
+  width: 5rem;
+  height: 1.8rem;
+  border-radius: 3px;
+  border: none;
+  background: var(--bgcolorDWMSection);
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.login-container img {
+  height: 70%;
+  width: 100%;
+  object-fit: contain;
+  background-color: #FFFFFF;
+  background: linear-gradient(to right, #F1F2F4, #FFFFFF)
+}
+
+.login-title {
+  position: relative;
+    top: 4rem;
+    font-family: sans-serif;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #fff;
+}

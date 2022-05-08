@@ -17,7 +17,8 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.5s ease;}
+  transition: all 0.5s ease;
+}
 
 .DWM-Components:hover, .DWM-Components:focus {
   color: #ffffff;
@@ -301,15 +302,17 @@
   cursor: pointer;
   font-size: 1.3rem;
   transition: all ease-in 150ms;
-  border: 1px solid transparent ;
+  border: 1px solid transparent;
 
 }
-.cnw-settings button:hover{
+
+.cnw-settings button:hover {
   color: var(--colorWhite);
-  border:1px solid var(--colorWhite) ;
-  
-  
+  border: 1px solid var(--colorWhite);
+
+
 }
+
 .CardNoteWindow hr {
   border: 3px solid var(--colorWhite);
   border-radius: 1px;
@@ -322,9 +325,10 @@
   align-items: center;
 }
 
-.cnw-header h1{
+.cnw-header h1 {
   color: var(--colorMainHomeContainer);
 }
+
 .cnw-header {
   position: relative;
   top: 0;
@@ -368,7 +372,7 @@
 }
 
 .right-cnw-body {
-  background-color:var(--colorMainHomeContainer);
+  background-color: var(--colorMainHomeContainer);
   width: 80%;
 }
 
@@ -424,6 +428,9 @@
   .left-cnw-body {
     width: 25vw;
   }
+  .carousel-item{
+    min-width: 10rem;
+  }
 
   .cnw-settings {
     flex-direction: column;
@@ -459,7 +466,17 @@
     left: 10.5rem
   }
 
-  .formNote-container, .editFormNote-container, .CardNoteWindow {
+  .home-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .left-cnw-body span {
+    font-size: 0.7rem;
+  }
+ 
+  .formNote-container,
+  .editFormNote-container,
+  .CardNoteWindow {
     height: 20rem;
 
   }
@@ -482,25 +499,32 @@
 
   }
 }
-.darkmode-homeContainer{
+
+.darkmode-homeContainer {
   background-color: #18181b;
 }
-.home-container .darkMode-navFilters{
+
+.home-container .darkMode-navFilters {
   background-color: #52525b;
 }
-.home-container .darkMode-titles{
+
+.home-container .darkMode-titles {
   color: #f4f4f5;
 }
-.darkMode-fel-percent-names{
+
+.darkMode-fel-percent-names {
   color: #a1a1aa;
 }
-.darkMode-CNW{
-background-color: var(--bgcolorDWMSection);
+
+.darkMode-CNW {
+  background-color: var(--bgcolorDWMSection);
 }
+
 .darkMode-CNW .right-cnw-body section {
-background-color:#a1a1aa ;
-color: #18181b;
+  background-color: #a1a1aa;
+  color: #18181b;
 }
+
 .darkMode-CNW .cnw-settings button {
   background-color: var(--bgcolorDWMSection);
 }

@@ -43,7 +43,7 @@ export default function Navbar() {
         </div>
         <ul className="nav-links">
           <li>
-            <Link to='/'>
+            <Link to='/home'>
               <nav >
                 <i className='bx bx-grid-alt' >
                   <IoHome />
