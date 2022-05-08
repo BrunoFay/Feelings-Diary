@@ -3,12 +3,6 @@
 /* Google Fonts Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
 a{
   text-decoration: none;
 }
@@ -43,17 +37,17 @@ a{
   min-width: 78px;
   text-align: center;
   line-height: 50px;
-  color: var(--bgcolorDWMSection);
+  color: var(--bglinksAndIcons);
 }
-.darkMode-sidebar .logo-details i{
-  color: #fff;
- }
+
 .sidebar .logo-details .logo_name {
   font-size: 22px;
-  color: #fff;
+  color: var(--bglinksAndIcons);
   font-weight: 600;
   transition: 0.3s ease;
-  transition-delay: 0.1s;
+  transition-delay: 0.3s;
+  position: relative;
+  bottom: 0.5rem;
 }
 
 .sidebar.close .logo-details .logo_name {
@@ -83,14 +77,10 @@ a{
   position: relative;
   list-style: none;
   transition: all 0.4s ease;
-  color: var(--bgcolorDWMSection);
+  color: var(--bglinksAndIcons);
 }
-.darkMode-sidebar .nav-links li{
-  color: #fff;
-}
-.sidebar .nav-links li:hover {
-  background: #1d1b31;
-}
+
+
 
 .sidebar .nav-links li .icon-link {
   display: flex;
@@ -109,16 +99,14 @@ a{
   line-height: 58px;
   font-size: 20px;
   cursor: pointer;
-  color: var(--bgcolorDWMSection);
+  color: var(--bglinksAndIcons);
   transition: all 0.3s ease;
 }
 
 .darkMode-sidebar .nav-links li i{
   color: var(--colorMainHomeContainer);
 }
-.sidebar .nav-links li i:hover{
-  color:#fff
-}
+
 .sidebar .nav-links li.showMenu i.arrow {
   transform: rotate(-180deg);
 }
@@ -136,7 +124,7 @@ a{
 .sidebar .nav-links li nav .link_name {
   font-size: 18px;
   font-weight: 400;
-  color: #fff;
+  color: var(--bglinksAndIcons);
   text-align: center;
   transition: all 0.4s ease;
 }
@@ -150,10 +138,9 @@ a{
 .sidebar .nav-links li .sub-menu {
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background: var(--bglinksAndIcons);
   display: none;
 }
-
 .sidebar .nav-links li.showMenu .sub-menu {
   display: block;
 }
@@ -278,7 +265,15 @@ a{
   font-size: 12px;
   font-style: italic;
 }
-
+.darkMode-sidebar .logo-details i,
+.darkMode-sidebar .nav-links li,
+.darkMode-sidebar .nav-links li nav .link_name,
+.darkMode-sidebar .logo-details .logo_name{
+  color: #fff;
+ }
+.darkMode-sidebar .nav-links li .sub-menu{
+  background-color: var(--bgcolorDWMSection);
+}
 @media (max-width: 530px) {
   .sidebar.close .nav-links li .sub-menu {
     display: none;

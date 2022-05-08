@@ -38,7 +38,7 @@
   display: flex;
   gap: 2rem;
   padding: 0.5rem;
-  background-color: var(--bgcolorDWMSection);
+  background-color: var(--bglinksAndIcons);
 }
 
 .home-container nav span {
@@ -286,14 +286,14 @@
   top: 20vh;
   border-radius: 7px;
   display: flex;
-  background-color: var(--bgcolorDWMSection);
+  background-color: var(--bglinksAndIcons);
   flex-direction: column;
   color: var(--colorWhite);
   box-shadow: 0px 1px 8px 5px rgb(77 75 75);
 }
 
 .CardNoteWindow .cnw-settings button {
-  background-color: #11101d;
+  background-color: var(--bglinksAndIcons);
   color: rgb(192, 183, 183);
   border: none;
   border-radius: 7px;
@@ -493,4 +493,14 @@
 }
 .darkMode-fel-percent-names{
   color: #a1a1aa;
+}
+.darkMode-CNW{
+background-color: var(--bgcolorDWMSection);
+}
+.darkMode-CNW .right-cnw-body section {
+background-color:#a1a1aa ;
+color: #18181b;
+}
+.darkMode-CNW .cnw-settings button {
+  background-color: var(--bgcolorDWMSection);
 }

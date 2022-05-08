@@ -3,6 +3,7 @@ import postContext from '../../context/postsContext'
 import { BiEdit } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 import { IoClose } from 'react-icons/io5'
+import {darkModeContext} from '../../context/darkModeContext'
 
 export default function CardNoteWindow() {
   const {
@@ -15,6 +16,7 @@ export default function CardNoteWindow() {
     handleKeyPressVisibiliity,
     handleClickVisibility,
     setEditedNote } = useContext(postContext)
+    const {isDarkMode}=useContext(darkModeContext)
   const { title, description, feeling, date } = noteCNW
 
   const handleClickClosebtn = () => {
@@ -32,7 +34,7 @@ export default function CardNoteWindow() {
     handleClickVisibility()
   }
   return (
-    <main className={`CardNoteWindow ${feeling}-container`}>
+    <main className={isDarkMode?`CardNoteWindow darkMode-CNW ${feeling}-container`:`CardNoteWindow ${feeling}-container`}>
       <section className='cnw-header'>
         <h1>{title}</h1>
         <div
