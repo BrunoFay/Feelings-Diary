@@ -3,6 +3,7 @@ import postContext from '../../context/postsContext'
 import { IoClose } from 'react-icons/io5';
 import { v4 as uuidv4 } from 'uuid';
 import { useHandleChange } from '../../hooks/useHandleChange';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 const INITIAL_STATE_NOTE = {
   id: uuidv4(),
@@ -25,6 +26,8 @@ export default function FormNotes({ feelings }) {
   const [note, setNote, handleChange] = useHandleChange(INITIAL_STATE_NOTE)
   const [disableBtn, setdisableBtn] = useState(true)
   const noteToEdit = notes.find(note => note.id === noteCNW.id)
+  const { setItem, getItem } = useLocalStorage()
+
 
   useEffect(() => {
     if (note.title !== '' || note.description !== '') {
@@ -40,14 +43,23 @@ export default function FormNotes({ feelings }) {
     }
   }, [editedNote])
 
+  const setNotesToProviderState = (payload) => {
+    setNotes(payload)
+  }
+  const setNotesToLocalStorage = (payload) => {
+    setItem('notes', payload)
+  }
+
+
   const handleClick = (e) => {
     e.preventDefault()
     if (editedNote.status) {
       const newNotes = notes.filter(note => note.id !== noteToEdit.id)
-      setNotes([...newNotes, note])
-
+      setNotesToProviderState([...newNotes, note])
+      setNotesToLocalStorage([...newNotes, note])
     } else {
-      setNotes([...notes, note])
+      setNotesToProviderState([...notes, note])
+      setNotesToLocalStorage([...notes, note])
     }
     setNote({ ...INITIAL_STATE_NOTE, id: uuidv4() })
     setEditedNote({ note: [], status: false })
@@ -62,12 +74,12 @@ export default function FormNotes({ feelings }) {
         >
           <IoClose />
         </div>
-        <select onChange={(e) => handleChange(e, { date: new Date() })} value={note.feeling} name='feeling' id='fellings'>
+        <select onChange={ handleChange} value={note.feeling} name='feeling' id='fellings'>
           {feelings.map(({ title, id }) => (<option key={id} value={title}>{title}</option>))}
         </select>
         <span> Title</span>
         <input
-          onChange={(e) => handleChange(e, { date: new Date() })}
+          onChange={handleChange}
           value={note.title}
           type='text'
           name='title'
@@ -75,7 +87,7 @@ export default function FormNotes({ feelings }) {
         <span> What generated this feeling ?</span>
 
         <textarea
-          onChange={(e) => handleChange(e, { date: new Date() })}
+          onChange={handleChange}
           name='description'
           value={note.description}
           cols='30'

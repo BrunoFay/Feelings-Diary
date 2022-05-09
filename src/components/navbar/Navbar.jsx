@@ -23,18 +23,18 @@ export default function Navbar() {
     return isDarkMode ? (
 
       <i onClick={() => toggleMode(false)}>
-        <FiMoon />
+        <FiSun />
       </i>
     ) : (
       <i onClick={() => toggleMode(true)}>
-        <FiSun />
+        <FiMoon />
       </i>
     )
   }
 
   return (
     <>
-      <aside className={isDarkMode?"sidebar darkMode-sidebar close":"sidebar close"} ref={sidebar} >
+      <aside className={isDarkMode ? "sidebar darkMode-sidebar close" : "sidebar close"} ref={sidebar} >
         <div className="logo-details" onClick={sideBarClicked}>
           <i className='bx bxl-c-plus-plus'>
             <VscThreeBars />

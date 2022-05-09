@@ -1,6 +1,7 @@
 import postContext from "./postsContext";
-import React, { useState } from 'react'
-import { mock } from '../MOCK'
+import React, { useEffect, useState } from 'react'
+import useLocalStorage from '../hooks/useLocalStorage';
+
 
 const MAX_PORCENTAGE = 100;
 const MIN_PORCENTAGE = 0;
@@ -12,11 +13,17 @@ const INITIAL_STATE_EDITEDNOTE = {
 export default function PostContextProvider({ children }) {
   const VISIBLECARD = 'visibleCard';
   const VISIBLEFORM = 'visibleForm';
-  const [notes, setNotes] = useState(mock)
+  const [notes, setNotes] = useState([])
   const [notesFiltred, setNotesFiltred] = useState([])
   const [noteCNW, setNoteCNW] = useState({})
   const [isVisible, setIsVisible] = useState(INITIAL_STATE_VISIBLE)
   const [editedNote, setEditedNote] = useState(INITIAL_STATE_EDITEDNOTE)
+  const { setItem, getItem } = useLocalStorage()
+
+  useEffect(() => {
+    const notesLocalStorage = getItem('notes')
+    setNotes(notesLocalStorage)
+  }, [])
 
   const percentageArray = (notes) => notes.map(({ feeling }) => feeling)
   const calculatePercentage = (array, item) => {

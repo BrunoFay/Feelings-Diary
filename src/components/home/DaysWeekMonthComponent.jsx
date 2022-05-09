@@ -6,7 +6,7 @@ export default function DaysWeekMonthComponent() {
   const { notes, setNotesFiltred } = useContext(postsContext)
   const { isDarkMode } = useContext(darkModeContext)
   const formatDateToYYYYMMDD = (date) => {
-    return date.toISOString().slice(0, 10)
+    return date.toString().slice(0, 10)
   }
   const noteWithDateFormated = notes
     .map((notes) => ({ ...notes, date: formatDateToYYYYMMDD(notes.date) }))
