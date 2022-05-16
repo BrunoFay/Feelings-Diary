@@ -4,6 +4,7 @@ import { BiEdit } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 import { IoClose } from 'react-icons/io5'
 import {darkModeContext} from '../../context/darkModeContext'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 export default function CardNoteWindow() {
   const {
@@ -18,19 +19,21 @@ export default function CardNoteWindow() {
     setEditedNote } = useContext(postContext)
     const {isDarkMode}=useContext(darkModeContext)
   const { title, description, feeling, date } = noteCNW
-
+    const {setItem}=useLocalStorage()
   const handleClickClosebtn = () => {
     handleClickVisibility(VISIBLECARD)
     setEditedNote({ status: false, note: [] })
-
+    setItem('notes',notes)
   }
   const handleClickEditbtn = () => {
     handleClickVisibility(VISIBLEFORM)
     setEditedNote({ status: true, note: noteCNW })
+
   }
   const handleClickRemovebtn = () => {
     const notesFiltred = notes.filter(note => note.id !== noteCNW.id)
     setNotes(notesFiltred)
+    setItem('notes',notesFiltred)
     handleClickVisibility()
   }
   return (

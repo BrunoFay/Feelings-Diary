@@ -204,11 +204,10 @@
   border: none;
   border-radius: 7px;
   padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
   cursor: pointer;
   transition: all ease-in 150ms;
   position: relative;
-  bottom: 0.5rem;
+  bottom: 0.2rem;
 }
 
 .formNote-container button:disabled, .editFormNote-container button:disabled {
@@ -222,9 +221,16 @@
   align-items: center;
   gap: 1rem;
 }
+.formNote-container form input, .editFormNote-container form input {
+width: 22vw;
+}
+.formNote-container form textarea, .editFormNote-container form textarea{
+  width: 28vw;
+  height: 28vh;
 
+}
 .cnw-header-closebtn:hover, .closeForm-btn:hover {
-  color: var(--bgcolorAng);
+  color: #ffffff;
   transition: all ease-in 100ms;
   cursor: pointer;
 }
