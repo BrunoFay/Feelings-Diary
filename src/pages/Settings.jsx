@@ -5,7 +5,6 @@ export default function Settings() {
   return (
     <>
      <Navbar />
-      <div>Settings</div>
       <main className="main-section">
         <div className="main-content">
           <i className='bx bx-menu' ></i>

@@ -5,7 +5,6 @@ export default function Schedule() {
   return (
     <>
      <Navbar />
-      <div>Schedule</div>
       <main className="main-section">
         <div className="main-content">
           <i className='bx bx-menu' ></i>

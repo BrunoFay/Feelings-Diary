@@ -1,7 +1,7 @@
 :root {
   margin: 0;
   padding: 0;
-  --bgcolorHap: #ffa801;
+  --bgcolorHap: #ee9d06;
   --bgcolorSad: #1e272e;
   --bgcolorNeu: #4086BF;
   --bgcolorAng: #ff3f34;
@@ -34,6 +34,7 @@ input, textarea {
   width: 81vw;
   transition: all 0.5s ease;
 }
+
 
 .sidebar.close~.main-container {
   left: 78px;
