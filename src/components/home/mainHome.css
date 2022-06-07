@@ -1,4 +1,4 @@
-.home-container {
+.page-container {
   background-color: var(--colorMainHomeContainer);
   width: 99%;
   flex-wrap: wrap;
@@ -25,24 +25,24 @@
   outline: none;
 }
 
-.home-container h1 {
+.page-container h1 {
   margin-left: 1rem;
   color: var(--bgcolorSad);
 }
 
-.sidebar.close .home-container {
+.sidebar.close .page-container {
   left: 78px;
   width: 30%;
 }
 
-.home-container nav {
+.page-container nav {
   display: flex;
   gap: 2rem;
   padding: 0.5rem;
   background-color: var(--bglinksAndIcons);
 }
 
-.home-container nav span {
+.page-container nav span {
   margin-left: 0.6rem;
 }
 
@@ -393,7 +393,7 @@ width: 22vw;
 
   }
 
-  .home-container nav {
+  .page-container nav {
     gap: 1rem;
   }
 
@@ -445,7 +445,7 @@ width: 22vw;
 }
 
 @media screen and (min-width:860px) {
-  .home-container {
+  .page-container {
     height: 100%;
   }
 
@@ -472,7 +472,7 @@ width: 22vw;
     left: 10.5rem
   }
 
-  .home-container h1 {
+  .page-container h1 {
     font-size: 1.5rem;
   }
 
@@ -506,15 +506,15 @@ width: 22vw;
   }
 }
 
-.darkmode-homeContainer {
+.darkmode-pageContainer {
   background-color: #18181b;
 }
 
-.home-container .darkMode-navFilters {
+.page-container .darkMode-navFilters {
   background-color: #52525b;
 }
 
-.home-container .darkMode-titles {
+.page-container .darkMode-titles {
   color: #f4f4f5;
 }
 

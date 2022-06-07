@@ -1,16 +1,15 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar';
+import PageContainer from '../components/Page-container';
 
 export default function Schedule() {
   return (
     <>
-     <Navbar />
-      <main className="main-section">
-        <div className="main-content">
-          <i className='bx bx-menu' ></i>
-          <span className="text">Schedule</span>
-        </div>
-      </main>
-    </>
+    <Navbar />
+    <main className="main-container">
+      <PageContainer>
+      </PageContainer>
+    </main>
+  </>
   )
 }

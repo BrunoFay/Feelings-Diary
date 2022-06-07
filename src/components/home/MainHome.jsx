@@ -8,6 +8,7 @@ import Carousel from './Carousel';
 import CardNoteWindow from './CardNoteWindow';
 import postContext from '../../context/postsContext';
 import { darkModeContext } from '../../context/darkModeContext';
+import PageContainer from '../Page-container';
 
 const ARRAY_FEELINGS = [{ title: 'Happiness' }, { title: 'Sadness' },
 { title: 'Anger' }, { title: 'Fear' }, { title: 'Neutral' }]
@@ -17,7 +18,7 @@ export default function MainHome() {
   const { isVisible, handleClickVisibility, VISIBLEFORM } = useContext(postContext)
   const { isDarkMode } = useContext(darkModeContext)
   return (
-    <main className={isDarkMode ? 'home-container darkmode-homeContainer' : 'home-container'}>
+    <PageContainer>
       <h1 className={isDarkMode ? 'darkMode-titles' : null}>Feelings</h1>
       <DaysWeekMonthComponent />
       <section className='feelings-container'>
@@ -36,6 +37,6 @@ export default function MainHome() {
           <AiOutlinePlus />
         </button>
       </section>
-    </main>
+    </PageContainer>
   )
 }
