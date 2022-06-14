@@ -4,6 +4,7 @@ import Navbar from '../components/navbar/Navbar';
 import PageContainer from '../components/Page-container';
 import '../components/schedule/schedule.css';
 import 'react-calendar/dist/Calendar.css';
+import NewMarkModal from '../components/schedule/NewMarkModal';
 
 export default function Schedule() {
   const [date, setDate] = useState(new Date());
@@ -26,18 +27,7 @@ export default function Schedule() {
             <Calendar onChange={handleDateCalendar} value={date} />
           </div>
           {isModalOpen && (
-            <div className='modal-container'>
-            <h2>Mark on calendar</h2>
-            <form action="" className='modal-form'>
-            <select>
-              <option value="">Events</option>
-              <option value="">birthdays</option>
-              <option value="">ss</option>
-            </select>
-            <textarea name="" id="" cols="45" rows="10" />
-          <button type='submit'>Mark</button>
-            </form>
-            </div>
+            <NewMarkModal/>
           )}
 
         </PageContainer>
