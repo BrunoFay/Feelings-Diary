@@ -1,5 +1,5 @@
 import React, { useContext,useEffect } from 'react'
-import { darkModeContext } from '../context/darkModeContext'
+import { darkModeContext } from '../context/darkmode/darkModeContext'
 export default function PageContainer({ children }) {
   const { isDarkMode } = useContext(darkModeContext)
   useEffect(() => {

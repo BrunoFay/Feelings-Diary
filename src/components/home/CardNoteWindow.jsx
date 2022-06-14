@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import postContext from '../../context/postsContext'
+import postContext from '../../context/homeFeelings/postsContext'
 import { BiEdit } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 import { IoClose } from 'react-icons/io5'
-import {darkModeContext} from '../../context/darkModeContext'
+import {darkModeContext} from '../../context/darkmode/darkModeContext'
 import useLocalStorage from '../../hooks/useLocalStorage'
 
 export default function CardNoteWindow() {

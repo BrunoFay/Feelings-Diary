@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { loginContext } from '../../context/loginContext'
+import { loginContext } from '../../context/login/loginContext'
 import './cardLogin.css'
 
 export default function CardLogin() {

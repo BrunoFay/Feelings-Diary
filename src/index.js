@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import PostContextProvider from './context/PostContextProvider';
-import DarkModeContextProvider from './context/DarkModeContextProvider';
-import LoginContextProvider from './context/LoginContextProvider';
+import PostContextProvider from './context/homeFeelings/PostContextProvider';
+import DarkModeContextProvider from './context/darkmode/DarkModeContextProvider';
+import LoginContextProvider from './context/login/LoginContextProvider';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from 'react'
 import NoteContainer from './NoteContainer';
-import postContext from '../../context/postsContext';
+import postContext from '../../context/homeFeelings/postsContext';
 import useDragScroll from '../../hooks/useDragScroll';
 
 export default function Carousel() {

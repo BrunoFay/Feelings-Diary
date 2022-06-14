@@ -8,7 +8,7 @@ import { BsCalendarDate } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiSun } from 'react-icons/fi';
 import { FiMoon } from 'react-icons/fi';
-import { darkModeContext } from '../../context/darkModeContext';
+import { darkModeContext } from '../../context/darkmode/darkModeContext';
 import "./navbar.css"
 
 /* reference https://www.codinglabweb.com/2021/06/dropdown-sidebar-menu-html-css.html */

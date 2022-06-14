@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import postContext from '../../context/postsContext'
+import postContext from '../../context/homeFeelings/postsContext'
 
 export default function NoteContainer({ note }) {
   const { title, description, feeling, date } = note

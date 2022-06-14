@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { darkModeContext } from '../../context/darkModeContext';
-import postContext from '../../context/postsContext';
+import { darkModeContext } from '../../context/darkmode/darkModeContext';
+import postContext from '../../context/homeFeelings/postsContext';
 import { CircularProgressbar } from 'react-circular-progressbar';
 
 export default function FeelingContainer({ title }) {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import postContext from '../../context/postsContext'
+import postContext from '../../context/homeFeelings/postsContext'
 import { IoClose } from 'react-icons/io5';
 import { v4 as uuidv4 } from 'uuid';
 import { useHandleChange } from '../../hooks/useHandleChange';

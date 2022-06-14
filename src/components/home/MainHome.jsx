@@ -6,8 +6,8 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import FeelingPercentageContainer from './FeelingPercentageContainer';
 import Carousel from './Carousel';
 import CardNoteWindow from './CardNoteWindow';
-import postContext from '../../context/postsContext';
-import { darkModeContext } from '../../context/darkModeContext';
+import postContext from '../../context/homeFeelings/postsContext';
+import { darkModeContext } from '../../context/darkmode/darkModeContext';
 import PageContainer from '../Page-container';
 
 const ARRAY_FEELINGS = [{ title: 'Happiness' }, { title: 'Sadness' },

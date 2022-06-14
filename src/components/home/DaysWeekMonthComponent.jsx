@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { darkModeContext } from '../../context/darkModeContext'
-import postsContext from '../../context/postsContext'
+import { darkModeContext } from '../../context/darkmode/darkModeContext'
+import postsContext from '../../context/homeFeelings/postsContext'
 
 export default function DaysWeekMonthComponent() {
   const { notes, setNotesFiltred } = useContext(postsContext)

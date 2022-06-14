@@ -1,6 +1,6 @@
 import postContext from "./postsContext";
 import React, { useEffect, useState } from 'react'
-import useLocalStorage from '../hooks/useLocalStorage';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 
 const MAX_PORCENTAGE = 100;
