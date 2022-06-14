@@ -27,7 +27,7 @@ export default function Schedule() {
             <Calendar onChange={handleDateCalendar} value={date} />
           </div>
           {isModalOpen && (
-            <NewMarkModal/>
+            <NewMarkModal date={date}/>
           )}
 
         </PageContainer>
