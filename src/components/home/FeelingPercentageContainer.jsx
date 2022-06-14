@@ -17,8 +17,8 @@ export default function FeelingContainer({ title }) {
       Happiness: '--bgcolorHap',
       Sadness: '--bgcolorSad',
       Anger: '--bgcolorAng',
-      Fear: '--bgcolorFer',
-      Neutral: '--bgcolorNeu'
+      Fear: isDarkMode ?'--bgcolorDarkFer':'--bgcolorFer',
+      Neutral: isDarkMode ?'--bgcolorDarkNeu':'--bgcolorNeu'
     }
     return colors[title]
   }
@@ -38,7 +38,7 @@ export default function FeelingContainer({ title }) {
             transformOrigin: 'center center',
           },
           trail: {
-            stroke: `${!isDarkMode ?'#d6d6d6':'#a0a0a0'}`,
+            stroke: `${!isDarkMode ? '#d6d6d6' : '#ebeffa63'}`,
             strokeLinecap: 'butt',
             transform: 'rotate(0.25turn)',
             transformOrigin: 'center center',
