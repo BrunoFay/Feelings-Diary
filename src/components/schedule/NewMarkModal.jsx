@@ -1,5 +1,7 @@
 import React from 'react'
+import { useContext } from 'react'
 import { useHandleChange } from '../../hooks/useHandleChange'
+import { scheduleContext } from '../../context/schedule/scheduleContext'
 
 const INITIAL_MARK_STATE = {
   scheduleType: 'events',
@@ -7,17 +9,29 @@ const INITIAL_MARK_STATE = {
   scheduleDate: ''
 }
 export default function NewMarkModal({ date }) {
-  const [newSchedule, setNewSchedule, handleChange] = useHandleChange(INITIAL_MARK_STATE)
+  const [
+    newSchedule,
+    setNewSchedule,
+    handleChange
+  ] = useHandleChange(INITIAL_MARK_STATE)
+  const { schedule, setSchedule } = useContext(scheduleContext)
+
   function handleClick(e) {
     e.preventDefault()
-    setNewSchedule({ ...newSchedule, scheduleDate: date })
+    const dateFormated = date.toDateString()
+    setSchedule([...schedule, { ...newSchedule, scheduleDate: dateFormated }])
+    setNewSchedule(INITIAL_MARK_STATE)
   }
- 
+
   return (
     <div className='modal-container'>
       <h2>Mark on calendar</h2>
       <form onSubmit={handleClick} className='modal-form'>
-        <select name='scheduleType' value={newSchedule.scheduleType} onChange={handleChange}>
+        <select
+          name='scheduleType'
+          value={newSchedule.scheduleType}
+          onChange={handleChange}
+        >
           <option value="events">Events</option>
           <option value="birthdays">Birthdays</option>
           <option value="meetings">Meetings</option>
@@ -30,10 +44,6 @@ export default function NewMarkModal({ date }) {
           onChange={handleChange} />
         <button type='submit'>Mark</button>
       </form>
-      <h1>{newSchedule.description}</h1>
-      <h1>{newSchedule.scheduleType}</h1>
-      <h1>{newSchedule.scheduleDate.toDateString()}</h1>
-
     </div>
   )
 }
