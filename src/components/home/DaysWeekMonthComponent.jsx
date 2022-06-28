@@ -15,8 +15,9 @@ export default function DaysWeekMonthComponent() {
     const dateFormated = new Date(date)
     return dateFormated
   }
-  const convertObjectsToValidFormat = (notes) => {
-    const noteValidFormat = notes.map((note) => ({ ...note, date: convertDateToValidFormat(note.date) }))
+  const convertObjectsToValidFormat = (notesFiltred) => {
+    const noteValidFormat = 
+      notesFiltred.map((note) => ({ ...note, date: convertDateToValidFormat(note.date) }))
     return noteValidFormat
   }
   const filterByWeek = () => {
@@ -24,7 +25,8 @@ export default function DaysWeekMonthComponent() {
     const lastDayOfWeek = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 6));
     const firstDayOfWeekFormated = formatDateToYYYYMMDD(firstdayOfWeek)
     const lastDayOfWeekFormated = formatDateToYYYYMMDD(lastDayOfWeek)
-    const notesWeek = noteWithDateFormated.filter((note) => (note.date >= firstDayOfWeekFormated && note.date <= lastDayOfWeekFormated))
+    const notesWeek = noteWithDateFormated
+      .filter((note) => (note.date >= firstDayOfWeekFormated && note.date <= lastDayOfWeekFormated))
     const notesWeekFormated = convertObjectsToValidFormat(notesWeek)
     setNotesFiltred(notesWeekFormated)
   }
@@ -45,7 +47,7 @@ export default function DaysWeekMonthComponent() {
     setNotesFiltred(notesDayFormated)
   }
   return (
-    <nav className={isDarkMode ? 'darkMode-navFilters':null}>
+    <nav className={isDarkMode ? 'darkMode-navFilters' : null}>
       <button
         type='button'
         onClick={() => setNotesFiltred([])}

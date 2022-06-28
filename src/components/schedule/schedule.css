@@ -27,16 +27,22 @@
   width: 35rem;
   height: 16.9rem;
   border-radius: 8px;
-  background-color: blueviolet;
+  background-color: #4834d4;
   gap: 0.5rem;
+}
+.modal-container h2 {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
 }
 .modal-form{
   display: flex;
   align-items: center;
   justify-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 50%;
   flex-direction: column;
+  margin-top: 1rem;
 }
 .modal-form button{
   position: relative;
@@ -65,4 +71,31 @@ padding: 1px 2px;
 }
 .meetings-container{
   background-color: blue;
+}
+.buttons-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 1rem;  
+
+}
+.buttons-container button{
+  padding: 0.5rem;
+  background-color: transparent;
+  color: white;
+  height: 10rem;
+  width: 9rem;
+  border-radius: 5px;
+  border: 1px solid  #bac4c8;
+  display:flex;
+  gap: 1rem;
+  flex-direction: column;
+  font-size: 1.2rem;
+  align-items:center;
+  justify-content: center;
+  font-weight: bold;
+}
+.buttons-container button:hover{
+  border: 1px solid white;
 }
